@@ -1,0 +1,37 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (produto of produtoService.produtos; track produto.nome) {
+        <tr>
+            <td>{{ produto.nome }}</td>
+
+            <td>
+                R$ {{ produto.preco.toFixed(2) }}
+            </td>
+
+            <td>
+                {{ produto.quantidade }}
+            </td>
+
+            <td>
+                {{ produto.categoria }}
+            </td>
+
+            <td class="acoes">
+                <button>Adicionar</button>
+                <button>Excluir</button>
+                <button>Editar</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
