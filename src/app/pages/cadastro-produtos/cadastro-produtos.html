@@ -4,5 +4,8 @@
     <input type="number" placeholder="Quantidade" class="form-control" #quantidade>
     <input type="text" placeholder="Categoria" class="form-control" #categoria>
 
-    <input type="button" value="Cadastrar" class="btn btn-primary" (click)="cadastrarProduto(nome.value, preco.value, quantidade.value, categoria.value)">
+    <div class="botoes">
+        <input type="button" value="Cadastrar" (click)="cadastrarProduto(nome.value, preco.value, quantidade.value, categoria.value)">
+        <input type="button" routerLink="/produtos" value="produtos">
+    </div>
 </form>
