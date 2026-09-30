@@ -1,0 +1,17 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    border: 5px solid green;
+    border-collapse: collapse;
+    font-size: 30px;
+    background: linear-gradient(to bottom, white 30%, rgb(184, 235, 184) 100%);
+}
+td{
+    border: 2px solid green;
+}
+th{
+    border: 2px solid green;
+}
