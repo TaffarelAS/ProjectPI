@@ -11,24 +11,38 @@ export class CadastroProdutos {
 
   constructor(private produtoService: ProdutoService) {}
 
-  cadastrarProduto(
-    nome: string,
-    preco: string,
-    quantidade: string,
-    categoria: string
+
+cadastrarProduto(
+  nome: string,
+  preco: string,
+  quantidade: string,
+  categoria: string
+) {
+  if (
+    !nome.trim() ||
+    !categoria.trim() ||
+    preco === '' ||
+    quantidade === '' ||
+    Number(preco) < 0 ||
+    Number(quantidade) < 0 ||
+    !Number.isFinite(Number(preco)) ||
+    !Number.isInteger(Number(quantidade))
   ) {
-
-    const produto = new Produto(
-      nome,
-      parseFloat(preco),
-      parseInt(quantidade),
-      categoria
-    );
-
-    this.produtoService.produtos.push(produto);
-
-    console.log(this.produtoService.produtos);
+    alert('Preencha todos os campos corretamente!');
+    return;
   }
+
+  const produto = new Produto(
+    nome,
+    Number(preco),
+    Number(quantidade),
+    categoria
+  );
+
+  this.produtoService.adicionarProduto(produto);
+
+  alert('Produto cadastrado com sucesso!');
+}
 
 }
 
