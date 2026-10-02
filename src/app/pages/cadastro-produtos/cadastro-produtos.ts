@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ProdutoService } from '../../services/produto';
 
-@Component({
-  imports: [],
+@Component({  
+  imports: [RouterLink],
   selector: 'app-cadastro-produtos',
   styleUrl: './cadastro-produtos.css',
   templateUrl: './cadastro-produtos.html',
