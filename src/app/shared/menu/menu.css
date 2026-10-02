@@ -39,3 +39,8 @@
     color: white;
     text-decoration: none;
 }
+
+.navbar-busca{
+    display: block;
+    align-items: center;
+}
