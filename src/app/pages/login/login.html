@@ -1,7 +1,7 @@
-/*
-  um comentario aqui
-*/
 
+<!--
+  Mexi em algumas coisas daqui para aparecer as notificações se  ologin foi bem sucedido ou não
+-->
 
 <link rel="stylesheet" href="login.css">
 
@@ -35,9 +35,11 @@
         >
       </div>
 
-      <button type="submit">Entrar</button>
+      <button type="button" (click)="entrar()">Entrar</button>
 
     </form>
+
+    <p>{{ mensagem }}</p>
 
     <div class="register">
       <p>Ainda não possui uma conta?</p>

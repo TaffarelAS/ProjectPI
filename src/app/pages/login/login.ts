@@ -6,4 +6,45 @@ import { Component } from '@angular/core';
   styleUrl: './login.css',
   templateUrl: './login.html',
 })
-export class Login {}
+export class Login {
+
+  mensagem = '';
+
+  usuarios = [
+    {
+      email: 'admin@teste.com',
+      senha: '1234',
+      admin: true
+    },
+    {
+      email: 'usuario1@teste.com',
+      senha: '1234',
+      admin: false
+    },
+    {
+      email: 'usuario2@teste.com',
+      senha: '1234',
+      admin: false
+    }
+  ];
+
+  entrar() {
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const senha = (document.getElementById('senha') as HTMLInputElement).value;
+
+    const usuario = this.usuarios.find(
+      usuario => usuario.email === email && usuario.senha === senha
+    );
+
+    if (!usuario) {
+      this.mensagem = 'E-mail ou senha incorretos.';
+      return;
+    }
+
+    if (usuario.admin) {
+      this.mensagem = 'Usuário administrador.';
+    } else {
+      this.mensagem = 'Usuário comum.';
+    }
+  }
+}
