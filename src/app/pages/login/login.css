@@ -75,3 +75,23 @@
   font-weight: bold;
   text-decoration: none;
 }
+.login-box button:hover {
+  background-color: #218838;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1e5aa8;
+  box-shadow: 0 0 5px rgba(30, 90, 168, 0.3);
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
