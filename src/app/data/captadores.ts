@@ -1,4 +1,4 @@
-import { Captador, PosiCaptador } from "../pages/modelos/guitarra.modelos";
+import { Captador, PosiCaptador } from "./modelos/guitarra.modelos";
 
 const ALL: Omit<Captador, 'posicao'>[] = [ 
     { id: 'single-1', nome: 'Single Pickup 1', tipo: 'single', cor: 'preto', mount: 'ring', preco: 100 },

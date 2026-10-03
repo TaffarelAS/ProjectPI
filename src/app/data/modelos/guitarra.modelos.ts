@@ -29,14 +29,14 @@ export interface GuitarraMontada {
         acabamento : CorAcabamento;
         escudo?: string;
     };
-    braço : {
+    braco : {
         madeira : TipoMadeira;
         escalaMadeira: TipoMadeira;
         escalaRaio : number;
         frets : number;
         scallop : boolean;
     };
-    cabeçote : {
+    cabecote : {
         tipo : string;
         acabamento : CorAcabamento;
         tarraxas : string;

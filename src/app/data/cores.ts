@@ -1,4 +1,4 @@
-import {TipoMadeira, CorAcabamento} from '../pages/modelos/guitarra.modelos';
+import {TipoMadeira, CorAcabamento} from './modelos/guitarra.modelos';
 
 export const CORES : CorAcabamento[] = [
     {id: 'preto', nome: 'Preto', hex: '#000000', type: 'poliuretano'},

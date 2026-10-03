@@ -1,0 +1,42 @@
+<section class="step">
+  <h3 class="step__title">Formato do corpo</h3>
+  <div class="chip-row">
+    @for (s of formatos; track s.id) {
+      <button class="chip"
+              [class.chip--selected]="montar().corpo.formato === s.id"
+              (click)="setFormato(s.id)">{{ s.nome }}</button>
+    }
+  </div>
+
+  <h3 class="step__title">Madeira</h3>
+  <div class="swatch-grid">
+    @for (w of madeiras; track w.id) {
+      <button class="swatch swatch--wood"
+              [attr.data-wood]="w.id"
+              [class.swatch--selected]="montar().corpo.madeira === w.id"
+              (click)="setMadeira(w.id)">
+        <span class="swatch__label">{{ w.nome }}</span>
+      </button>
+    }
+  </div>
+
+  <h3 class="step__title">Cor / Acabamento</h3>
+  <div class="swatch-grid">
+    @for (c of cores; track c.id) {
+      <button class="swatch swatch--color"
+              [style.--swatch-color]="c.hex"
+              [class.swatch--selected]="montar().corpo.acabamento === c.id"
+              (click)="setCor(c)">
+        <span class="swatch__label">{{ c.nome }}</span>
+      </button>
+    }
+  </div>
+
+  <h3 class="step__title">Escudo (opcional)</h3>
+  <div class="chip-row">
+    <button class="chip" (click)="semEscudo()">Sem escudo</button>
+    <button class="chip" (click)="setEscudo('#f5f5f5')">Branco</button>
+    <button class="chip" (click)="setEscudo('#111')">Preto</button>
+    <button class="chip" (click)="setEscudo('#d9c9a8')">Tortoise</button>
+  </div>
+</section>

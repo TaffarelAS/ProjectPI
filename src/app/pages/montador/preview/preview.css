@@ -1,0 +1,29 @@
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-8);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.preview__svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,.15));
+}
+
+.preview__body,
+.preview__neck,
+.preview__headstock,
+.preview__pickguard {
+  transition: fill .25s ease;
+  stroke: #111;
+  stroke-width: 1;
+}
+
+.preview__pickguard {
+  stroke: none;
+}
