@@ -32,7 +32,16 @@ export class Login {
     const email = (document.getElementById('email') as HTMLInputElement).value;
     const senha = (document.getElementById('senha') as HTMLInputElement).value;
 
-    const usuario = this.usuarios.find(
+    const usuariosCadastrados = JSON.parse(
+      localStorage.getItem('usuarios') || '[]'
+    );
+
+    const todosUsuarios = [
+      ...this.usuarios,
+      ...usuariosCadastrados
+    ];
+
+    const usuario = todosUsuarios.find(
       usuario => usuario.email === email && usuario.senha === senha
     );
 
