@@ -5,7 +5,7 @@ import { Footer } from './shared/footer/footer';
 import { Montador } from './pages/montador/montador';
 
 @Component({
-  imports: [RouterOutlet, Menu, Footer],
+  imports: [RouterOutlet, Menu, Footer, Montador],
   standalone: true,
   selector: 'app-root',
   styleUrl: './app.css',

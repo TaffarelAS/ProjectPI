@@ -29,7 +29,7 @@ export const FORMATOS: Record<string, FormatoDef> = {
 }
 
 export const CABEÇOTES: Record<string, string> = {
-    strat: 'M175,20 L225,20 L235,70 L165,70 Z',
+    strato: 'M175,20 L225,20 L235,70 L165,70 Z',
     tele: 'M180,15 L220,15 L230,75 L170,75 Z',
     gibson: 'M170,15 L230,15 L235,80 L165,80 Z',
 };

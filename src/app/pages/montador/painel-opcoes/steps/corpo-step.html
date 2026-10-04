@@ -25,7 +25,7 @@
     @for (c of cores; track c.id) {
       <button class="swatch swatch--color"
               [style.--swatch-color]="c.hex"
-              [class.swatch--selected]="montar().corpo.acabamento === c.id"
+              [class.swatch--selected]="montar().corpo.acabamento.id === c.id"
               (click)="setCor(c)">
         <span class="swatch__label">{{ c.nome }}</span>
       </button>

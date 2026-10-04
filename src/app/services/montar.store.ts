@@ -3,7 +3,7 @@ import { GuitarraMontada, Captador, PosiCaptador } from '../data/modelos/guitarr
 
 const DEFAULT_GUITARRA: GuitarraMontada = {
     corpo: {
-        formato: 'Stratocaster',
+        formato: 'strato',
         madeira: 'alder',
         acabamento: { id: 'preto', nome: 'Preto', hex: '#000000', type: 'poliuretano' },
     },

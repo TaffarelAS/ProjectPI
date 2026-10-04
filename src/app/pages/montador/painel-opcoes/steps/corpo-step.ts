@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MontarStore } from '../../../../services/montar.store';
 import { FORMATOS, ESCUDOS } from '../../../../data/formatos';
 import {CORES, MADEIRAS} from '../../../../data/cores';
+import {CorAcabamento, TipoMadeira} from '../../../../data/modelos/guitarra.modelos';
 
 @Component({
   imports: [],
@@ -21,11 +22,11 @@ export class CorpoStep {
     this.store.setBody({ formato: id });
   }
 
-  setMadeira(madeira: any) {
+  setMadeira(madeira: TipoMadeira) {
     this.store.setBody({ madeira });
   }
 
-  setCor(c: any) {
+  setCor(c: CorAcabamento) {
     this.store.setBody({ acabamento: c });
   }
 

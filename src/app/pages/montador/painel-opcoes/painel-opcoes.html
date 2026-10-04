@@ -1,1 +1,21 @@
-<p>painel-opcoes works!</p>
+<div class="panel">
+  <nav class="panel__tabs">
+    @for (s of steps; track s) {
+      <button
+        class="panel__tab"
+        [class.panel__tab--active]="current() === s"
+        (click)="current.set(s)">
+        {{ s | titlecase }}
+      </button>
+    }
+  </nav>
+
+  <div class="panel__content">
+    @switch (current()) {
+      @case ('corpo')     { <app-corpo-step /> }
+      @case ('braco')     { <app-braco-step /> }
+      @case ('captadores')  { <app-captador-step /> }
+      @case ('hardware') { <app-hardware-step /> }
+    }
+  </div>
+</div>

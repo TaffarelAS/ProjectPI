@@ -4,7 +4,7 @@
     @for (w of madeiras; track w.id) {
       <button class="swatch swatch--wood"
               [attr.data-wood]="w.id"
-              [class.swatch--selected]="montar().neck.wood === w.id"
+              [class.swatch--selected]="montar().braco.madeira === w.id"
               (click)="setMadeira(w.id)">
         <span class="swatch__label">{{ w.nome }}</span>
       </button>
@@ -16,7 +16,7 @@
     @for (w of madeiras; track w.id) {
       <button class="swatch swatch--wood"
               [attr.data-wood]="w.id"
-              [class.swatch--selected]="montar().neck.fretboard === w.id"
+              [class.swatch--selected]="montar().braco.escala === w.id"
               (click)="setEscalaMadeira(w.id)">
         <span class="swatch__label">{{ w.nome }}</span>
       </button>
@@ -25,14 +25,14 @@
 
   <h3 class="step__title">Número de trastes</h3>
   <div class="chip-row">
-    <button class="chip" [class.chip--selected]="montar().neck.frets === 21" (click)="setFrets(21)">21</button>
-    <button class="chip" [class.chip--selected]="montar().neck.frets === 22" (click)="setFrets(22)">22</button>
-    <button class="chip" [class.chip--selected]="montar().neck.frets === 24" (click)="setFrets(24)">24</button>
+    <button class="chip" [class.chip--selected]="montar().braco.frets === 21" (click)="setFrets(21)">21</button>
+    <button class="chip" [class.chip--selected]="montar().braco.frets === 22" (click)="setFrets(22)">22</button>
+    <button class="chip" [class.chip--selected]="montar().braco.frets === 24" (click)="setFrets(24)">24</button>
   </div>
 
   <h3 class="step__title">Escala (length)</h3>
   <div class="chip-row">
-    <button class="chip" [class.chip--selected]="montar().neck.scale === 24.75" (click)="setEscalaRaio(24.75)">24.75"</button>
-    <button class="chip" [class.chip--selected]="montar().neck.scale === 25.5" (click)="setEscalaRaio(25.5)">25.5"</button>
+    <button class="chip" [class.chip--selected]="montar().braco.escala === 24.75" (click)="setEscalaRaio(24.75)">24.75"</button>
+    <button class="chip" [class.chip--selected]="montar().braco.escala === 25.5" (click)="setEscalaRaio(25.5)">25.5"</button>
   </div>
 </section>

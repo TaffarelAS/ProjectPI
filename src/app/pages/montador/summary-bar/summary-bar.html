@@ -1,0 +1,17 @@
+<div class="summary">
+  @if (warnings().length) {
+    <ul class="summary__warnings">
+      @for (w of warnings(); track w) { <li>{{ w }}</li> }
+    </ul>
+  }
+  <div class="summary__bar">
+    <div class="summary__price">
+      <span class="summary__label">Total</span>
+      <strong>{{ total() | currency:'BRL' }}</strong>
+    </div>
+    <div class="summary__actions">
+      <button class="btn btn--ghost" (click)="reset()">Resetar</button>
+      <button class="btn btn--primary">Salvar build</button>
+    </div>
+  </div>
+</div>
