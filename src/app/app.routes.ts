@@ -4,6 +4,8 @@ import { Carrinho } from './pages/carrinho/carrinho';
 import { Home } from './pages/home/home';
 import { CadastroProdutos } from './pages/cadastro-produtos/cadastro-produtos';
 import { TabelProds } from './pages/tabel-prods/tabel-prods';
+import { Montador } from './pages/montador/montador';
+
 
 export const routes: Routes = [
     {path: 'login', component: Login},
@@ -11,4 +13,5 @@ export const routes: Routes = [
     {path: '', component: Home},
     {path: 'cadastro-produtos', component: CadastroProdutos},
     {path: 'tabel_prods', component: TabelProds}
+    {path: 'montar', component: Montador}
 ];
