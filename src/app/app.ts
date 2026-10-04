@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Menu } from './shared/menu/menu';
 import { Footer } from './shared/footer/footer';
+import { Home } from './pages/home/home';
 import { Montador } from './pages/montador/montador';
 
+
 @Component({
-  imports: [RouterOutlet, Menu, Footer, Montador],
+  imports: [RouterOutlet, Menu, Footer, Home, Montador],
   standalone: true,
   selector: 'app-root',
   styleUrl: './app.css',
@@ -13,5 +15,4 @@ import { Montador } from './pages/montador/montador';
 })
 export class App {
   titulo = 'Site de Instrumentos Musicais';
-  nome = 'randy';
 }
