@@ -1,7 +1,7 @@
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RouterLink } from '@angular/router';
 
 interface Produto {
   id: number;
@@ -12,7 +12,7 @@ interface Produto {
 
 @Component({
   selector: 'app-carrinho',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './carrinho.html',
   styleUrl: './carrinho.css',
 })
@@ -44,6 +44,24 @@ export class Carrinho {
       (soma, produto) =>
         soma + produto.preco * produto.quantidade,
       0
+    );
+  }
+
+  aumentarQuantidade(produto: Produto): void {
+    produto.quantidade++;
+  }
+
+
+  diminuirQuantidade(produto: Produto): void {
+    if (produto.quantidade > 1) {
+      produto.quantidade--;
+    }
+  }
+
+
+  removerProduto(id: number): void {
+    this.produtos = this.produtos.filter(
+      produto => produto.id !== id
     );
   }
 

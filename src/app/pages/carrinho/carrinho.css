@@ -1,7 +1,9 @@
 
+
 * {
   box-sizing: border-box;
 }
+
 
 .pagina {
   min-height: 100vh;
@@ -14,6 +16,7 @@
   color: #222222;
 }
 
+
 .carrinho-card {
   width: 100%;
   max-width: 465px;
@@ -23,10 +26,12 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.13);
 }
 
+
 .cabecalho {
   text-align: center;
   margin-bottom: 30px;
 }
+
 
 .cabecalho h1 {
   color: #1760b8;
@@ -35,6 +40,7 @@
   font-family: Georgia, serif;
 }
 
+
 .cabecalho p {
   font-family: Georgia, serif;
   font-size: 14px;
@@ -42,9 +48,11 @@
   color: #444444;
 }
 
+
 .conteudo {
   width: 100%;
 }
+
 
 .produto {
   display: flex;
@@ -55,12 +63,14 @@
   border-bottom: 1px solid #d4d4d4;
 }
 
+
 .produto-info {
   display: flex;
   align-items: center;
   gap: 12px;
   min-width: 0;
 }
+
 
 .produto-imagem {
   width: 55px;
@@ -74,17 +84,20 @@
   font-size: 25px;
 }
 
+
 .produto-detalhes h3 {
   font-size: 14px;
   margin: 0 0 7px;
   font-weight: 600;
 }
 
+
 .preco {
   font-size: 13px;
   color: #555555;
   margin: 0;
 }
+
 
 .produto-acoes {
   display: flex;
@@ -93,11 +106,13 @@
   gap: 8px;
 }
 
+
 .quantidade {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 
 .quantidade button {
   width: 25px;
@@ -109,15 +124,18 @@
   font-size: 16px;
 }
 
+
 .quantidade button:hover {
   background-color: #e1e1e1;
 }
+
 
 .quantidade span {
   font-size: 13px;
   min-width: 12px;
   text-align: center;
 }
+
 
 .remover {
   border: none;
@@ -127,13 +145,16 @@
   cursor: pointer;
 }
 
+
 .remover:hover {
   text-decoration: underline;
 }
 
+
 .resumo {
   margin-top: 25px;
 }
+
 
 .linha-resumo,
 .linha-total {
@@ -144,10 +165,12 @@
   font-size: 14px;
 }
 
+
 .frete {
   color: #239e48;
   font-weight: bold;
 }
+
 
 .divisor {
   height: 1px;
@@ -155,14 +178,17 @@
   margin: 20px 0;
 }
 
+
 .linha-total {
   font-size: 17px;
   margin-bottom: 22px;
 }
 
+
 .linha-total strong:last-child {
   color: #1760b8;
 }
+
 
 .btn-finalizar {
   width: 100%;
@@ -177,9 +203,11 @@
   transition: background-color 0.2s;
 }
 
+
 .btn-finalizar:hover {
   background-color: #218838;
 }
+
 
 .rodape {
   text-align: center;
@@ -188,10 +216,12 @@
   font-size: 14px;
 }
 
+
 .rodape p {
   margin-bottom: 8px;
   color: #444444;
 }
+
 
 .rodape a {
   color: #1760b8;
@@ -199,9 +229,11 @@
   text-decoration: none;
 }
 
+
 .rodape a:hover {
   text-decoration: underline;
 }
+
 
 .vazio {
   text-align: center;
@@ -209,24 +241,29 @@
   color: #555555;
 }
 
+
 .vazio span {
   font-size: 35px;
 }
+
 
 @media (max-width: 480px) {
   .carrinho-card {
     padding: 30px 22px;
   }
 
+
   .produto {
     gap: 6px;
   }
+
 
   .produto-imagem {
     width: 45px;
     height: 45px;
     min-width: 45px;
   }
+
 
   .produto-detalhes h3 {
     font-size: 12px;
