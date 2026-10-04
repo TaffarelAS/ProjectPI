@@ -1,1 +1,73 @@
-<p>carrinho works!</p>
+
+<div class="pagina">
+  <div class="carrinho-card">
+
+    <header class="cabecalho">
+      <h1>Meu Carrinho</h1>
+      <p>Confira seus produtos</p>
+    </header>
+
+    <div class="conteudo">
+
+      <div class="produto" *ngFor="let produto of produtos">
+
+        <div class="produto-info">
+          <div class="produto-imagem">
+            <span>🛍️</span>
+          </div>
+
+          <div class="produto-detalhes">
+            <h3>{{ produto.nome }}</h3>
+            <p class="preco">
+              {{ produto.preco | currency:'BRL' }}
+            </p>
+          </div>
+        </div>
+
+        <div class="produto-acoes">
+          <div class="quantidade">
+            <span>{{ produto.quantidade }}</span> 
+          </div>
+        </div>
+
+      </div>
+
+      <div class="vazio" *ngIf="produtos.length === 0">
+        <span>🛒</span>
+        <p>Seu carrinho está vazio.</p>
+      </div>
+
+    </div>
+
+    <div class="resumo" *ngIf="produtos.length > 0">
+
+      <div class="linha-resumo">
+        <span>Subtotal</span>
+        <span>{{ total | currency:'BRL' }}</span>
+      </div>
+
+      <div class="linha-resumo">
+        <span>Frete</span>
+        <span class="frete">Grátis</span>
+      </div>
+
+      <div class="divisor"></div>
+
+      <div class="linha-total">
+        <strong>Total</strong>
+        <strong>{{ total | currency:'BRL' }}</strong>
+      </div>
+
+      <button class="btn-finalizar" (click)="finalizarCompra()">
+        Finalizar compra
+      </button>
+
+    </div>
+
+    <footer class="rodape">
+      <p>Deseja continuar comprando?</p>
+      <a href="/produtos">Voltar às compras</a>
+    </footer>
+
+  </div>
+</div>
