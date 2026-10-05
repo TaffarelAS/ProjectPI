@@ -8,10 +8,16 @@ export class CarrinhoService {
   produtos: any[] = [];
 
   adicionarProduto(produto: any) {
-    this.produtos.push({
-      ...produto,
-      quantidade: 1
-    });
+    const produtoExistente = this.produtos.find(p => p.id === produto.id);
+
+    if (produtoExistente) {
+      produtoExistente.quantidade++;
+    } else {
+      this.produtos.push({
+        ...produto,
+        quantidade: 1
+      });
+    }
   }
 
   aumentarQuantidade(index: number) {
@@ -26,6 +32,7 @@ export class CarrinhoService {
 
   removerProduto(index: number) {
     this.produtos.splice(index, 1);
+    alert("Item removido")
   }
 
   calcularTotal() {

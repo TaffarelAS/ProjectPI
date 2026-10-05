@@ -71,9 +71,9 @@ export class Home {
         },
         {
           id: 8,
-          nome: 'Gaita',
-          preco: 79.90,
-          imagem: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Harmonica.jpg/640px-Harmonica.jpg'
+          nome: 'Pandeiro Gope 10 Pol Madeira Pele Nylon',
+          preco: 170.90,
+          imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_696860-MLA115964317770_092026-F.webp'
         }
       ]
     }
