@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="cadastrar.css">
+
+<div class="cadastro-container">
+
+<div class="cadastro-box">
+
+<div class="cadastro-header">
+  <h1>Cadastrar</h1>
+  <p>Crie sua conta</p>
+</div>
+
+<form>
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input
+      type="text"
+      id="nome"
+      name="nome"
+      placeholder="Digite seu nome"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="email">E-mail</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Digite seu e-mail"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="senha">Senha</label>
+    <input
+      type="password"
+      id="senha"
+      name="senha"
+      placeholder="Digite sua senha"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="confirmarSenha">Confirmar senha</label>
+    <input
+      type="password"
+      id="confirmarSenha"
+      name="confirmarSenha"
+      placeholder="Digite sua senha novamente"
+    >
+  </div>
+
+  <button type="button" (click)="cadastrar()">Cadastrar</button>
+
+</form>
+
+<p>{{ mensagem }}</p>
+
+<div class="login">
+  <p>Já possui uma conta?</p>
+  <a routerLink="/login">Fazer login</a>
+</div>
+
+</div>
+
+</div>
