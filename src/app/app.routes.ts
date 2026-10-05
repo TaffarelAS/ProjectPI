@@ -11,6 +11,7 @@ import { Montador } from './pages/montador/montador';
 export const routes: Routes = [
     {path: 'login', component: Login},
     {path: 'carrinho', component: Carrinho},
+    {path: 'home', component: Home},
     {path: 'cadastrar', component: Cadastrar},
     {path: '', component: Home}
     {path: '', component: Home},
