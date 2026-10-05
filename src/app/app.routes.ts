@@ -8,6 +8,7 @@ import { TabelProds } from './pages/tabel-prods/tabel-prods';
 export const routes: Routes = [
     {path: 'login', component: Login},
     {path: 'carrinho', component: Carrinho},
+    {path: 'home', component: Home},
     {path: '', component: Home},
     {path: 'cadastro-produtos', component: CadastroProdutos},
     {path: 'tabel_prods', component: TabelProds}
