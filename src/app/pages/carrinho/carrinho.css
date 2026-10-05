@@ -71,19 +71,23 @@
   min-width: 0;
 }
 
-
 .produto-imagem {
-  width: 55px;
-  height: 55px;
-  min-width: 55px;
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
   border-radius: 8px;
-  font-size: 25px;
+  overflow: hidden;
 }
 
+.produto-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 .produto-detalhes h3 {
   font-size: 14px;
@@ -259,10 +263,10 @@
 
 
   .produto-imagem {
-    width: 45px;
-    height: 45px;
-    min-width: 45px;
-  }
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+}
 
 
   .produto-detalhes h3 {
