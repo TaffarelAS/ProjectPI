@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterLink, Routes } from '@angular/router';
 import { Login } from './pages/login/login';
 import { Carrinho } from './pages/carrinho/carrinho';
 import { Home } from './pages/home/home';
@@ -13,9 +13,8 @@ export const routes: Routes = [
     {path: 'carrinho', component: Carrinho},
     {path: 'home', component: Home},
     {path: 'cadastrar', component: Cadastrar},
-    {path: '', component: Home}
     {path: '', component: Home},
     {path: 'cadastro-produtos', component: CadastroProdutos},
-    {path: 'tabel_prods', component: TabelProds}
+    {path: 'tabel-prods', component: TabelProds},
     {path: 'montar', component: Montador}
 ];

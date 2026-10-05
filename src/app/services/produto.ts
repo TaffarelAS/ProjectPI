@@ -30,3 +30,5 @@ export class ProdutoService {
     }
   }
 }
+
+export { Produto };

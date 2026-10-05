@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --bg: #f7f7f8;
-  --surface: #ffffff;
+  --bg: #ffffff;;
+  --surface: #eeeeee;
   --border: #e2e2e6;
   --text: #1a1a1a;
   --text-muted: #6b6b75;
