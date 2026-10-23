@@ -1,2 +1,0 @@
-:host { filter: drop-shadow(0 2px 3px rgba(0,0,0,.35)); }
-rect { stroke: rgba(0,0,0,.6); stroke-width: 1.5; transition: fill .2s ease; }

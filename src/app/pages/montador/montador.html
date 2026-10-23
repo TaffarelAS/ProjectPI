@@ -1,9 +1,137 @@
-<div class="montador">
-  <div class="montador__preview">
-    <app-preview />
-  </div>
-  <div class="montador__options">
-    <app-painel-opcoes />
-  </div>
+<div id="montador">
+        <div class="modelo">
+        <img src="guitarra.png" alt="guitarra">
+    </div>
+    <div class="opcoes">
+        <div class="sub_menu">
+            <button [class.active]="section() === 'corpo'"
+            (click)="setSection('corpo')"> Corpo </button>
+
+            <button [class.active]="section() === 'braco'"
+            (click)="setSection('braco')"> Braço </button>
+
+            <button [class.active]="section() === 'hardware'"
+            (click)="setSection('hardware')"> Hardware </button>
+
+        </div>
+        <div class="corpo_content" [class.active]="section() == 'corpo'">
+
+            <div class="madeira_corpo">
+                
+                <p> -- Madeira corpo -- </p>
+
+                <div class="input_radio">
+                    <label for="m_corpo_alder" class="inputs">
+                        <input type="radio" name="m_corpo" value="Alder" id="m_corpo_alder">
+                        <img src="alder.jpg" alt="Alder" width="50px" height="50px">
+                    </label>
+                    Alder
+                </div>
+                
+                <div class="input_radio">               
+                    <label for="m_corpo_basswood" class="inputs">
+                        <input type="radio" name="m_corpo" value="Basswood" id="m_corpo_basswood" checked>
+                        <img src="basswood.jpg" alt="Basswood" width="50px" height="50px">
+                    </label>
+                    Basswood
+                </div>
+
+                <div class="input_radio">
+                    <label for="m_corpo_maple" class="inputs">
+                        <input type="radio" name="m_corpo" value="Maple" id="m_corpo_maple">
+                        <img src="maple.jpg" alt="Maple" width="50px" height="50px">    
+                    </label>
+                    Maple
+                </div>
+
+            </div>
+            
+            <div class="tipo_corpo">
+                <p> -- Tipo de Corpo -- </p>
+
+                <input type="radio" name="corpo" value="Strato" id="t_corpo_strato">
+                <label for="t_corpo_strato" class="inputs">Strato</label>
+
+                <input type="radio" name="corpo" value="Les Paul" id="t_corpo_les">
+                <label for="t_corpo_les" class="inputs">Les Paul</label>
+
+                <input type="radio" name="corpo" value="Tele" id="t_corpo_tele">
+                <label for="t_corpo_tele" class="inputs">Tele</label>
+
+                <input type="radio" name="corpo" value="SG" id="t_corpo_sg" checked>
+                <label for="t_corpo_sg" class="inputs">SG</label>
+
+                <input type="radio" name="corpo" value="Offset" id="t_corpo_offset">
+                <label for="t_corpo_offset" class="inputs">Offset</label>
+            </div>
+
+            <p> -- Cor Corpo -- </p>
+
+            <select name="cor_corpo" id="">
+                <option id="opt_red" value="Vermelho">Vermelho</option>
+                <option id="opt_blu" value="Azul">Azul</option>
+                <option id="opt_blk" value="Preto">Preto</option>
+                <option id="opt_yll" value="Amarelo">Amarelo</option>
+                <option id="opt_sun" value="Sun-Burst">SunBurst</option>
+                <option id="opt_no" value="Sem Cor">Sem Cor</option>
+            </select>
+
+        </div>
+        <div class="braco_content " [class.active]="section() == 'braco'">
+            <p> -- Madeira Braço -- </p>
+
+            <input type="radio" name="braco" value="Maple" id="">
+            <input type="radio" name="braco" value="Cedro" id="">
+            <input type="radio" name="braco" value="Mógno" id="">
+
+            <p> -- Madeira Escala -- </p>
+
+            <input type="radio" name="escala" value="Rosewood" id="">
+            <input type="radio" name="escala" value="Maple" id="">
+            <input type="radio" name="escala" value="Ebono" id="">
+
+            <p> -- Cor Braço -- </p>
+
+            <select name="cor_bra" id="">
+                <option id="opt_red" value="Vermelho">Vermelho</option>
+                <option id="opt_blu" value="Azul">Azul</option>
+                <option id="opt_blk" value="Preto">Preto</option>
+                <option id="opt_yll" value="Amarelo">Amarelo</option>
+                <option id="opt_no" value="Sem Cor">Sem Cor</option>
+            </select>
+
+        </div>
+        <div class="hardware_content" [class.active]="section() == 'hardware'">
+
+            <p> -- Estilo Hardware -- </p>
+
+            <input type="radio" name="estilo" value="3-Pickup" id="">
+            <input type="radio" name="estilo" value="2-Pickup" id="">
+            <input type="radio" name="estilo" value="Jr" id="">
+
+            <p> -- Captadores -- </p>
+
+            <input type="radio" name="captadores" value="Single Coil" id="">
+            <input type="radio" name="captadores" value="Humbucker" id="">
+            <input type="radio" name="captadores" value="P90" id="">
+
+            <p> -- Cor Captadores -- </p>
+
+            <select name="cor_cap" id="">
+                <option value="Cromado"></option>
+                <option value="Dourado"></option>
+                <option value="Preto"></option>
+                <option value="Branco"></option>
+            </select>
+
+            <p> -- Cor Hardware -- </p>
+
+            <select name="cor_hard" id="">
+                <option value="Cromado"></option>
+                <option value="Dourado"></option>
+                <option value="Preto"></option>
+                <option value="Branco"></option>
+            </select>
+        </div>
+    </div>
 </div>
- <app-summary-bar />

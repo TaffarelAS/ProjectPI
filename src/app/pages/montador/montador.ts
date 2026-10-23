@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
-import { Preview} from './preview/preview';
-import { PainelOpcoes } from './painel-opcoes/painel-opcoes';
-import { SummaryBar } from './summary-bar/summary-bar';
+import { CommonModule } from '@angular/common';
+import { Component, signal } from '@angular/core';
 
 @Component({
-  imports: [Preview, PainelOpcoes, SummaryBar],
+  imports: [CommonModule],
   selector: 'app-montador',
   styleUrl: './montador.css',
   templateUrl: './montador.html',
 })
-export class Montador {}
+export class Montador {
+  section = signal<'corpo' | 'braco' | 'hardware'>('corpo');
+
+  setSection(s: 'corpo' | 'braco' | 'hardware') {
+    this.section.set(s)
+  }
+}
