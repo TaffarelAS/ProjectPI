@@ -12,6 +12,6 @@ export const routes: Routes = [
     {path: 'carrinho', component: Carrinho},
     {path: '', component: Home},
     {path: 'cadastro-produtos', component: CadastroProdutos},
-    {path: 'tabel_prods', component: TabelProds}
+    {path: 'tabel_prods', component: TabelProds},
     {path: 'montar', component: Montador}
 ];

@@ -1,0 +1,39 @@
+<svg width="48" height="326" viewBox="0 0 48 326" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="neck-22-frets">
+<path id="neck-fill" d="M3 0H45L48 326H0L3 0Z" fill="#D9A66A"/>
+<path id="fretboard-fill" d="M6 7H42L45 320H3L6 7Z" fill="#62432E"/>
+<rect id="nut-fill" x="3" width="42" height="5" rx="1" fill="#E9E3D3"/>
+<path id="Fret 1" d="M5.7019 31.7973H42.2981" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 2" d="M5.49133 54.2589H42.5087" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 3" d="M5.2926 75.4599H42.7075" stroke-linejoin="round" stroke="#AAB3B6"/>
+<circle id="inlay-fill" cx="24" cy="64.8594" r="2" fill="#E9E3D3"/>
+<path id="Fret 4" d="M5.10498 95.471H42.8951" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 5" d="M4.92786 114.359H43.0721" stroke-linejoin="round" stroke="#AAB3B6"/>
+<circle id="inlay-fill_2" cx="24" cy="104.915" r="2" fill="#E9E3D3"/>
+<path id="Fret 6" d="M4.76074 132.187H43.2392" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 7" d="M4.60303 149.014H43.397" stroke-linejoin="round" stroke="#AAB3B6"/>
+<circle id="inlay-fill_3" cx="24" cy="140.6" r="2" fill="#E9E3D3"/>
+<path id="Fret 8" d="M4.4541 164.897H43.5459" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 9" d="M4.3136 179.888H43.6865" stroke-linejoin="round" stroke="#AAB3B6"/>
+<circle id="inlay-fill_4" cx="24" cy="172.392" r="2" fill="#E9E3D3"/>
+<path id="Fret 10" d="M4.18091 194.038H43.8191" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 11" d="M4.05566 207.394H43.9443" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 12" d="M3.9375 220H44.0625" stroke-linejoin="round" stroke="#AAB3B6"/>
+<circle id="inlay-fill_5" cx="16" cy="213.697" r="2" fill="#E9E3D3"/>
+<circle id="inlay-fill_6" cx="32" cy="213.697" r="2" fill="#E9E3D3"/>
+<path id="Fret 13" d="M3.82593 231.899H44.174" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 14" d="M3.7207 243.129H44.2794" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 15" d="M3.62134 253.73H44.3788" stroke-linejoin="round" stroke="#AAB3B6"/>
+<circle id="inlay-fill_7" cx="24" cy="248.43" r="2" fill="#E9E3D3"/>
+<path id="Fret 16" d="M3.52747 263.735H44.4725" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 17" d="M3.43896 273.179H44.5611" stroke-linejoin="round" stroke="#AAB3B6"/>
+<circle id="inlay-fill_8" cx="24" cy="268.457" r="2" fill="#E9E3D3"/>
+<path id="Fret 18" d="M3.35535 282.093H44.6446" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 19" d="M3.27649 290.507H44.7235" stroke-linejoin="round" stroke="#AAB3B6"/>
+<circle id="inlay-fill_9" cx="24" cy="286.3" r="2" fill="#E9E3D3"/>
+<path id="Fret 20" d="M3.20203 298.448H44.7979" stroke-linejoin="round" stroke="#AAB3B6"/>
+<path id="Fret 21" d="M3.13171 305.944H44.8682" stroke-linejoin="round" stroke="#AAB3B6"/>
+<circle id="inlay-fill_10" cx="24" cy="302.196" r="2" fill="#E9E3D3"/>
+<path id="Fret 22" d="M3.06543 313.019H44.9345" stroke-linejoin="round" stroke="#AAB3B6"/>
+</g>
+</svg>
