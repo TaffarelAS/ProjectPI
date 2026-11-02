@@ -1,15 +1,13 @@
 <nav class="home">
 
-  <div class="topo">
-    <h1>Loja de Instrumentos Musicais</h1>
-
+  <div class="">
     <a routerLink="/carrinho" class="link-carrinho">
       Ver Carrinho
       ({{ carrinhoService.produtos.length }})
     </a>
   </div>
 
-  <section class="secao" *ngFor="let categoria of categorias">
+  <section class="grid-container " *ngFor="let categoria of categorias">
 
     <h2>{{ categoria.nome }}</h2>
 
@@ -17,7 +15,7 @@
 
     <div class="produtos">
 
-      <div class="produto-card" *ngFor="let produto of categoria.produtos">
+      <div class="" *ngFor="let produto of categoria.produtos">
 
         <img
           [src]="produto.imagem"
