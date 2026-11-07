@@ -40,15 +40,20 @@ cadastrarProduto(
     categoria
   );
 
-  this.produtoService.adicionarProduto(produto);
-
-  alert('Produto cadastrado com sucesso!');
+  this.produtoService.adicionarProduto(produto).subscribe({
+    next: () => alert('Produto cadastrado com sucesso!'),
+    error: (erro: unknown) => {
+      console.error('Erro ao cadastrar produto:', erro);
+      alert('Não foi possível cadastrar o produto. Verifique se a API está ligada.');
+    }
+  });
 }
 
 }
 
 export class Produto {
 
+  id?: number;
   nome: string;
   preco: number;
   quantidade: number;

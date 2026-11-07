@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProdutoService } from '../../services/produto';
 import { Produto } from '../cadastro-produtos/cadastro-produtos';
@@ -10,9 +10,23 @@ import { Produto } from '../cadastro-produtos/cadastro-produtos';
   templateUrl: './tabel-prods.html',
   styleUrl: './tabel-prods.css'
 })
-export class TabelProds {
+export class TabelProds implements OnInit {
 
   constructor(public produtoService: ProdutoService) {}
+
+  ngOnInit() {
+    this.carregarProdutos();
+  }
+
+  private carregarProdutos() {
+    this.produtoService.listar().subscribe({
+      next: produtos => this.produtoService.produtos = produtos,
+      error: (erro: unknown) => {
+        console.error('Erro ao listar produtos:', erro);
+        alert('Não foi possível carregar os produtos. Verifique se a API está ligada.');
+      }
+    });
+  }
 
   excluirProduto(produto: Produto) {
     const confirmar = confirm(
@@ -20,7 +34,21 @@ export class TabelProds {
     );
 
     if (confirmar) {
-      this.produtoService.excluirProduto(produto);
+      if (produto.id === undefined) {
+        alert('Não foi possível identificar este produto para exclusão.');
+        return;
+      }
+
+      this.produtoService.excluirProduto(produto.id).subscribe({
+        next: () => {
+          this.produtoService.produtos =
+            this.produtoService.produtos.filter(p => p.id !== produto.id);
+        },
+        error: (erro: unknown) => {
+          console.error('Erro ao excluir produto:', erro);
+          alert('Não foi possível excluir o produto.');
+        }
+      });
     }
   }
 
@@ -57,6 +85,11 @@ export class TabelProds {
       return;
     }
 
+    if (produto.id === undefined) {
+      alert('Não foi possível identificar este produto para edição.');
+      return;
+    }
+
     const produtoAtualizado = new Produto(
       nome,
       Number(preco),
@@ -64,11 +97,18 @@ export class TabelProds {
       categoria
     );
 
-    this.produtoService.editarProduto(
-      produto,
-      produtoAtualizado
-    );
-
-    alert('Produto editado com sucesso!');
+    this.produtoService.editarProduto(produto.id, produtoAtualizado).subscribe({
+      next: atualizado => {
+        const index = this.produtoService.produtos.findIndex(p => p.id === atualizado.id);
+        if (index !== -1) {
+          this.produtoService.produtos[index] = atualizado;
+        }
+        alert('Produto editado com sucesso!');
+      },
+      error: (erro: unknown) => {
+        console.error('Erro ao editar produto:', erro);
+        alert('Não foi possível editar o produto.');
+      }
+    });
   }
 }

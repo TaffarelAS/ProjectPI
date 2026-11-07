@@ -1,0 +1,11 @@
+{
+  "produtos": [
+    {
+      "nome": "Guitarra",
+      "preco": 100,
+      "quantidade": 50,
+      "categoria": "Cordas",
+      "id": 1
+    }
+  ]
+}
