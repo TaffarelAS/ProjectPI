@@ -1,3 +1,4 @@
+
 :host {
     box-sizing: border-box;
     display: flex;
@@ -5,53 +6,146 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     min-height: 0;
-    padding: 24px;
+    padding: 30px;
+    background-color: #f5faf5;
 }
 
+/* Container da tabela */
 .tabela-container {
-    max-width: 100%;
+    width: 100%;
+    max-width: 1100px;
     max-height: 55vh;
     overflow: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 80, 0, 0.10);
 }
 
-table{
-    border: 5px solid green;
+/* Tabela */
+table {
+    width: 100%;
     border-collapse: collapse;
-    font-size: 30px;
-    background: linear-gradient(to bottom, white 30%, rgb(184, 235, 184) 100%);
+    font-size: 18px;
+    background-color: white;
     margin-inline: auto;
+    border: 1px solid #b5d6b5;
 }
 
+/* Cabeçalho */
 th {
     position: sticky;
     top: 0;
-    background: rgb(184, 235, 184);
+    z-index: 1;
+    background-color: #b8ebb8;
+    color: #245224;
+    font-weight: 700;
+    padding: 18px 22px;
+    border-bottom: 2px solid #7fb77f;
+    text-align: center;
 }
 
-td{
-    border: 2px solid green;
+/* Células */
+td {
+    padding: 16px 22px;
+    border-bottom: 1px solid #dcebdc;
+    text-align: center;
+    color: #333;
 }
 
-th{
-    border: 2px solid green;
+/* Efeito alternado nas linhas */
+tbody tr:nth-child(even) {
+    background-color: #f1f9f1;
 }
 
-.acoes{
-    width: 100px;
+/* Efeito ao passar o mouse */
+tbody tr:hover {
+    background-color: #e2f3e2;
+    transition: background-color 0.2s ease;
 }
 
+/* Botões de ação */
+.acoes {
+    width: 90px;
+    padding: 9px 12px;
+    margin: 3px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Editar */
 .edt {
-    background: rgb(184, 235, 184) 100%;
+    background-color: #c9ebc9;
+    color: #245224;
 }
 
+.edt:hover {
+    background-color: #91d391;
+    transform: translateY(-2px);
+}
+
+/* Excluir */
 .exc {
-    background: rgb(235, 184, 184) 100%;
+    background-color: #f3caca;
+    color: #8b2929;
 }
 
-.add{
-    font-size: 20px;
-    width: 200px;
-    background: rgb(184, 235, 184) 100%;
+.exc:hover {
+    background-color: #e9a5a5;
+    transform: translateY(-2px);
+}
+
+/* Container adicionar */
+.adicionar-container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Botão adicionar */
+.add {
+    font-size: 17px;
+    font-weight: 600;
+    width: 210px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 9px;
+    background-color: #68ad68;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.add:hover {
+    background-color: #4c944c;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    :host {
+        padding: 15px;
+    }
+
+    table {
+        font-size: 15px;
+    }
+
+    th, td {
+        padding: 12px 8px;
+    }
+
+    .acoes {
+        width: auto;
+        padding: 8px;
+    }
+
+    .add {
+        width: 100%;
+    }
 }

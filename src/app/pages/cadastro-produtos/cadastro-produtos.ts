@@ -12,7 +12,9 @@ export class CadastroProdutos {
 
   constructor(private produtoService: ProdutoService) {}
 
-
+  // Os campos do formulário chegam como texto, mesmo quando representam números.
+  // A validação impede nome/categoria vazios, preço negativo ou inválido e quantidade
+  // negativa ou fracionária antes de converter os valores para o tipo numérico.
 cadastrarProduto(
   nome: string,
   preco: string,
@@ -40,6 +42,9 @@ cadastrarProduto(
     categoria
   );
 
+  // O serviço envia o novo produto por POST. A resposta é assíncrona: a mensagem de
+  // sucesso só aparece quando a API confirma o cadastro; falhas são registradas no
+  // console e também informadas à pessoa usuária.
   this.produtoService.adicionarProduto(produto).subscribe({
     next: () => alert('Produto cadastrado com sucesso!'),
     error: (erro: unknown) => {
@@ -53,6 +58,8 @@ cadastrarProduto(
 
 export class Produto {
 
+  // O ID é opcional porque ainda não existe no momento do cadastro; a API o cria
+  // e o devolve junto ao produto persistido.
   id?: number;
   nome: string;
   preco: number;
