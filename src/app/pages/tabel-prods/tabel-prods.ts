@@ -20,7 +20,7 @@ export class TabelProds implements OnInit {
 
   private carregarProdutos() {
     this.produtoService.listar().subscribe({
-      next: produtos => this.produtoService.produtos = produtos,
+      next: produtos => this.produtoService.produtos.set(produtos),
       error: (erro: unknown) => {
         console.error('Erro ao listar produtos:', erro);
         alert('Não foi possível carregar os produtos. Verifique se a API está ligada.');
@@ -41,8 +41,9 @@ export class TabelProds implements OnInit {
 
       this.produtoService.excluirProduto(produto.id).subscribe({
         next: () => {
-          this.produtoService.produtos =
-            this.produtoService.produtos.filter(p => p.id !== produto.id);
+          this.produtoService.produtos.update(
+            produtos => produtos.filter(p => p.id !== produto.id)
+          );
         },
         error: (erro: unknown) => {
           console.error('Erro ao excluir produto:', erro);
@@ -99,10 +100,9 @@ export class TabelProds implements OnInit {
 
     this.produtoService.editarProduto(produto.id, produtoAtualizado).subscribe({
       next: atualizado => {
-        const index = this.produtoService.produtos.findIndex(p => p.id === atualizado.id);
-        if (index !== -1) {
-          this.produtoService.produtos[index] = atualizado;
-        }
+        this.produtoService.produtos.update(
+          produtos => produtos.map(p => p.id === atualizado.id ? atualizado : p)
+        );
         alert('Produto editado com sucesso!');
       },
       error: (erro: unknown) => {

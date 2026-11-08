@@ -1,5 +1,5 @@
 
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Produto } from '../pages/cadastro-produtos/cadastro-produtos';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -36,5 +36,5 @@ export class ProdutoService {
     return this.http.delete<void>(`${this.API}/${id}`);
   }
 
-  produtos: Produto[] = [];
+  readonly produtos = signal<Produto[]>([]);
 }
