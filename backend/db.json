@@ -8,13 +8,6 @@
       "id": 1
     },
     {
-      "nome": "Guitarra",
-      "preco": 50,
-      "quantidade": 10,
-      "categoria": "corda",
-      "id": 2
-    },
-    {
       "nome": "Bateria",
       "preco": 900,
       "quantidade": 10,

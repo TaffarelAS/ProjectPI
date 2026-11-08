@@ -1,42 +1,44 @@
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Preço</th>
-      <th>Quantidade</th>
-      <th>Categoria</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    @for (produto of produtoService.produtos(); track produto.id) {
+<div class="tabela-container">
+  <table>
+    <thead>
       <tr>
-        <td>{{ produto.nome }}</td>
-        <td>R$ {{ produto.preco.toFixed(2) }}</td>
-        <td>{{ produto.quantidade }}</td>
-        <td>{{ produto.categoria }}</td>
-
-        <td>
-          <button
-            class="acoes edt"
-            (click)="editarProduto(produto)">
-            Editar
-          </button>
-
-          <button
-            class="acoes exc"
-            (click)="excluirProduto(produto)">
-            Excluir
-          </button>
-        </td>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Categoria</th>
+        <th>Ações</th>
       </tr>
-    }
-  </tbody>
-</table>
+    </thead>
 
-<div>
+    <tbody>
+      @for (produto of produtoService.produtos(); track produto.id) {
+        <tr>
+          <td>{{ produto.nome }}</td>
+          <td>R$ {{ produto.preco.toFixed(2) }}</td>
+          <td>{{ produto.quantidade }}</td>
+          <td>{{ produto.categoria }}</td>
+
+          <td>
+            <button
+              class="acoes edt"
+              (click)="editarProduto(produto)">
+              Editar
+            </button>
+
+            <button
+              class="acoes exc"
+              (click)="excluirProduto(produto)">
+              Excluir
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<div class="adicionar-container">
   <button
     class="add"
     [routerLink]="['/cadastro-produtos']">

@@ -1,6 +1,19 @@
-body{
+:host {
+    box-sizing: border-box;
     display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 20px;
+    min-height: 0;
+    padding: 24px;
+}
+
+.tabela-container {
+    max-width: 100%;
+    max-height: 55vh;
+    overflow: auto;
 }
 
 table{
@@ -8,27 +21,37 @@ table{
     border-collapse: collapse;
     font-size: 30px;
     background: linear-gradient(to bottom, white 30%, rgb(184, 235, 184) 100%);
+    margin-inline: auto;
 }
+
+th {
+    position: sticky;
+    top: 0;
+    background: rgb(184, 235, 184);
+}
+
 td{
     border: 2px solid green;
 }
+
 th{
     border: 2px solid green;
 }
+
 .acoes{
     width: 100px;
 }
+
 .edt {
     background: rgb(184, 235, 184) 100%;
 }
+
 .exc {
     background: rgb(235, 184, 184) 100%;
 }
 
 .add{
     font-size: 20px;
-    margin-top: 20px;
-    margin-left: 200px;
     width: 200px;
     background: rgb(184, 235, 184) 100%;
 }
