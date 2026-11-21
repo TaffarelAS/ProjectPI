@@ -1,17 +1,41 @@
-<nav>
-    <section>
-        <!--carrosel de imagens-->
-    </section>
-    <section>
-        <h3>Promoções</h3>
-        <hr>
-    </section>
-    <section>
-        <h3>Mais Vendidos</h3>
-        <hr>
-    </section>
-    <section>
-        <h3>Acabaram de Chegar</h3>
-        <hr>
-    </section>
+<nav class="home">
+
+  <div class="">
+    <a routerLink="/carrinho" class="link-carrinho">
+      Ver Carrinho
+      ({{ carrinhoService.produtos.length }})
+    </a>
+  </div>
+
+  <section class="grid-container " *ngFor="let categoria of categorias">
+
+    <h2>{{ categoria.nome }}</h2>
+
+    <hr>
+
+    <div class="produtos">
+
+      <div class="" *ngFor="let produto of categoria.produtos">
+
+        <img
+          [src]="produto.imagem"
+          [alt]="produto.nome"
+        >
+
+        <h3>{{ produto.nome }}</h3>
+
+        <p class="preco">
+          {{ produto.preco | currency:'BRL' }}
+        </p>
+
+        <button (click)="adicionarAoCarrinho(produto)">
+          Adicionar ao carrinho
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
 </nav>

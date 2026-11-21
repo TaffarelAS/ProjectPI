@@ -1,1 +1,51 @@
-<p>login works!</p>
+
+<!--
+  Mexi em algumas coisas daqui para aparecer as notificações se  o login foi bem sucedido ou não
+-->
+
+<link rel="stylesheet" href="login.css">
+
+<div class="login-container">
+
+  <div class="login-box">
+
+    <div class="login-header">
+      <h1>Login</h1>
+      <p>Entre na sua conta</p>
+    </div>
+
+    <form>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Digite seu e-mail"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input
+          type="password"
+          id="senha"
+          name="senha"
+          placeholder="Digite sua senha"
+        >
+      </div>
+
+      <button type="button" (click)="entrar()">Entrar</button>
+
+    </form>
+
+    <p>{{ mensagem }}</p>
+
+    <div class="register">
+      <p>Ainda não possui uma conta?</p>
+      <a routerLink="/cadastrar">Criar conta</a>
+    </div>
+
+  </div>
+
+</div>

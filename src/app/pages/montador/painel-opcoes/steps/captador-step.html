@@ -1,0 +1,20 @@
+<section class="step">
+  @for (pos of posicoes; track pos) {
+    <div class="pickup-section">
+      <h3 class="step__title">
+        Captador — {{ pos | titlecase }}
+        @if (selected(pos)) { <span class="pickup-section__current">({{ selected(pos)!}})</span> }
+      </h3>
+      <div class="pickup-grid">
+        @for (c of catalogo[pos]; track c.id) {
+          <button class="pickup-card"
+                  [class.pickup-card--selected]="selected(pos)?.id === c.id"
+                  (click)="pick(pos, c)">
+            <span class="pickup-card__kind">{{ c.tipo }}</span>
+            <span class="pickup-card__price">R$ {{ c.preco }}</span>
+          </button>
+        }
+      </div>
+    </div>
+  }
+</section>

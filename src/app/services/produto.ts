@@ -37,12 +37,6 @@ export class ProdutoService {
   ): Observable<Produto> {
     return this.http.put<Produto>(`${this.API}/${id}`, produto);
   }
-
-  excluirProduto(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.API}/${id}`);
-  }
-
-  // Estado compartilhado da lista exibida na tabela. Alterações feitas com set/update
-  // notificam o Angular para atualizar a interface sem recarregar a página.
-  readonly produtos = signal<Produto[]>([]);
 }
+
+export { Produto };

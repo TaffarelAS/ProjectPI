@@ -22,4 +22,32 @@
       "id": 4
     }
   ]
+  "clientes": [
+    {
+      "id": "1",
+      "nome": "Enzo Silva",
+      "email": "enzo@email.com",
+      "senha": "123"
+    },
+    {
+      "nome": "teste",
+      "email": "teste@teste",
+      "senha": "teste",
+      "id": "GvevnMuQpsc"
+    },
+    {
+      "nome": "1",
+      "email": "1@1",
+      "senha": "1",
+      "id": "Hiy2Nj31SX0"
+    },
+    {
+      "nome": "fim",
+      "email": "fim",
+      "senha": "fim",
+      "id": "P5R4Z43Qipc"
+    }
+  ],
+  "vendas": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }
