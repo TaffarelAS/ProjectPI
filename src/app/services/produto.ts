@@ -12,6 +12,7 @@ export class ProdutoService {
   // O json-server publica a coleção "produtos" do backend/db.json nesta URL.
   // A API deve estar em execução na porta 3000 para que as operações abaixo funcionem.
   private readonly API = 'http://localhost:3000/produtos';
+  readonly produtos = signal<Produto[]>([]);
 
   constructor(private http: HttpClient) { }
 
@@ -36,6 +37,10 @@ export class ProdutoService {
     produto: Omit<Produto, 'id'>
   ): Observable<Produto> {
     return this.http.put<Produto>(`${this.API}/${id}`, produto);
+  }
+
+  excluirProduto(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.API}/${id}`);
   }
 }
 
