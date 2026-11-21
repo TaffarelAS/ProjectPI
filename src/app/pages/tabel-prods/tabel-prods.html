@@ -1,42 +1,52 @@
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Preço</th>
-      <th>Quantidade</th>
-      <th>Categoria</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    @for (produto of produtoService.produtos; track produto.nome) {
+<div class="tabela-container">
+  <table>
+    <thead>
       <tr>
-        <td>{{ produto.nome }}</td>
-        <td>R$ {{ produto.preco.toFixed(2) }}</td>
-        <td>{{ produto.quantidade }}</td>
-        <td>{{ produto.categoria }}</td>
-
-        <td>
-          <button
-            class="acoes edt"
-            (click)="editarProduto(produto)">
-            Editar
-          </button>
-
-          <button
-            class="acoes exc"
-            (click)="excluirProduto(produto)">
-            Excluir
-          </button>
-        </td>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Categoria</th>
+        <th>Ações</th>
       </tr>
-    }
-  </tbody>
-</table>
+    </thead>
 
-<div>
+    <tbody>
+      <!-- Percorre a lista reativa do serviço. O Angular usa o ID persistente como chave
+           estável para identificar cada linha quando a lista muda. -->
+      @for (produto of produtoService.produtos(); track produto.id) {
+        <tr>
+          <td>{{ produto.id }}</td>
+          <td>{{ produto.nome }}</td>
+          <!-- Apresenta o preço com duas casas decimais, sem alterar o valor salvo. -->
+          <td>R$ {{ produto.preco.toFixed(2) }}</td>
+          <td>{{ produto.quantidade }}</td>
+          <td>{{ produto.categoria }}</td>
+
+          <td>
+            <button
+              class="acoes edt"
+              (click)="editarProduto(produto)">
+              <!-- Abre a edição do produto desta linha. -->
+              Editar
+            </button>
+
+            <button
+              class="acoes exc"
+              (click)="excluirProduto(produto)">
+              <!-- Solicita confirmação e exclui o produto desta linha. -->
+              Excluir
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<div class="adicionar-container">
+  <!-- Navega ao formulário de cadastro; a tabela buscará os dados novamente ao ser aberta. -->
   <button
     class="add"
     [routerLink]="['/cadastro-produtos']">

@@ -1,4 +1,27 @@
 {
+  "produtos": [
+    {
+      "nome": "Guitarra",
+      "preco": 100,
+      "quantidade": 50,
+      "categoria": "Cordas",
+      "id": 1
+    },
+    {
+      "nome": "Bateria",
+      "preco": 900,
+      "quantidade": 10,
+      "categoria": "percussão",
+      "id": 3
+    },
+    {
+      "nome": "cravo",
+      "preco": 900,
+      "quantidade": 100,
+      "categoria": "corda",
+      "id": 4
+    }
+  ]
   "clientes": [
     {
       "id": "1",
@@ -25,7 +48,6 @@
       "id": "P5R4Z43Qipc"
     }
   ],
-  "produtos": [],
   "vendas": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

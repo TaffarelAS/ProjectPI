@@ -1,11 +1,25 @@
 <form>
+    <!-- Cada referência (#nome, #preco etc.) permite ler o valor atual do campo.
+         O clique em Cadastrar passa esses valores ao componente, que valida e envia os dados. -->
     <input type="text" placeholder="Nome" class="form-control" #nome>
+
     <input type="number" placeholder="Preço" class="form-control" #preco>
+
     <input type="number" placeholder="Quantidade" class="form-control" #quantidade>
-    <input type="text" placeholder="Categoria" class="form-control" #categoria>
+
+    <select class="form-control" #categoria>
+        <option value="" disabled selected>Selecione a categoria</option>
+        <option value="corda">Corda</option>
+        <option value="sopro">Sopro</option>
+        <option value="percussão">Percussão</option>
+        <option value="teclado">Teclado</option>
+    </select>
 
     <div class="botoes">
-        <input type="button" value="Cadastrar" (click)="cadastrarProduto(nome.value, preco.value, quantidade.value, categoria.value)">
+        <input type="button" value="Cadastrar"
+            (click)="cadastrarProduto(nome.value, preco.value, quantidade.value, categoria.value)">
+
+        <!-- Abre a página da tabela; a lista é carregada pela própria página ao ser aberta. -->
         <input type="button" routerLink="/tabel_prods" value="Produtos Cadastrados">
     </div>
 </form>

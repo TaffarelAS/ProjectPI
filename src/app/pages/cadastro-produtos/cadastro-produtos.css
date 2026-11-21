@@ -1,18 +1,53 @@
 form {
     width: 500px;
+    max-width: 90%;
     margin: 30px auto;
     text-align: center;
 }
 
-input{
-    margin-bottom: 10px;
+.form-control {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid rgb(10, 228, 170);
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 15px;
+    background-color: white;
+    transition: border-color 0.2s;
 }
 
-.botoes:hover {
-    margin-top: 5px;
-    color:rgb(10, 228, 170);
+.form-control:focus {
+    border-color: rgb(0, 160, 120);
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.botoes {
+    margin-top: 15px;
 }
 
 .botoes input {
-    margin: 0 3px;
+    padding: 12px 18px;
+    margin: 0 5px;
+    background-color: rgb(10, 228, 170);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.botoes input:hover {
+    background-color: rgb(0, 180, 130);
+    color: white;
 }
