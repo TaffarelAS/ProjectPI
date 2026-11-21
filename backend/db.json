@@ -24,13 +24,7 @@
   ],
   "clientes": [
     {
-      "id": "1",
-      "nome": "Enzo Silva",
-      "email": "enzo@email.com",
-      "senha": "123"
-    },
-    {
-      "nome": "teste",
+      "nome": "testeagain",
       "email": "teste@teste",
       "senha": "teste",
       "id": "GvevnMuQpsc"
@@ -46,6 +40,12 @@
       "email": "fim",
       "senha": "fim",
       "id": "P5R4Z43Qipc"
+    },
+    {
+      "nome": "bub",
+      "email": "bub@bub.com",
+      "senha": "123456",
+      "id": "uYP1VgQ"
     }
   ],
   "vendas": [],

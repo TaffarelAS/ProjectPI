@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Cliente } from '../../model/cliente';
 import { ClienteService } from '../../services/cliente.services';
@@ -12,7 +12,7 @@ import { ClienteService } from '../../services/cliente.services';
 })
 export class AdminClientes implements OnInit {
   private service = inject(ClienteService);
-  listaClientes: Cliente[] = [];
+  listaClientes = signal<Cliente[]>([]);
 
   ngOnInit(): void {
     this.carregarClientes();
@@ -21,7 +21,7 @@ export class AdminClientes implements OnInit {
   carregarClientes(): void {
     this.service.listar().subscribe({
       next: (clientes) => {
-        this.listaClientes = clientes;
+        this.listaClientes.set(clientes);
       },
       error: () => {
         alert('Erro ao carregar clientes da API.');
@@ -35,7 +35,9 @@ export class AdminClientes implements OnInit {
     if (confirm('Deseja realmente excluir o cliente?')) {
       this.service.excluir(id).subscribe({
         next: () => {
-          this.listaClientes = this.listaClientes.filter(cliente => cliente.id !== id);
+          this.listaClientes.update(lista =>
+            lista.filter(cliente => cliente.id !== id)
+          );
         },
         error: () => {
           alert('Erro ao excluir cliente.');

@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        @for (cliente of listaClientes; track cliente.id) {
+        @for (cliente of listaClientes(); track cliente.id) {
           <tr>
             <td>{{ cliente.id }}</td>
             <td>{{ cliente.nome }}</td>
