@@ -1,0 +1,78 @@
+<div class="content-container">
+  <form>
+    <h1>{{ clienteId ? 'Editar Cliente' : 'Cadastro de Cliente' }}</h1>
+    <p class="descricao">
+      {{ clienteId ? 'Altere os dados do cliente abaixo.' : 'Preencha os dados abaixo para criar seu cadastro.' }}
+    </p>
+
+    @if (clienteId) {
+      <label for="id">ID</label>
+      <input
+        class="input-simples"
+        id="id"
+        name="id"
+        type="text"
+        [ngModel]="cliente.id"
+        disabled
+      />
+    }
+
+    <label for="nome">Nome</label>
+    <input
+      class="input-simples"
+      id="nome"
+      name="nome"
+      type="text"
+      placeholder="Digite o nome completo"
+      [(ngModel)]="cliente.nome"
+    />
+
+    <label for="email">Email</label>
+    <input
+      class="input-simples"
+      id="email"
+      name="email"
+      type="email"
+      placeholder="Digite o email"
+      [(ngModel)]="cliente.email"
+    />
+
+    <label for="senha">Senha</label>
+    <input
+      class="input-simples"
+      id="senha"
+      name="senha"
+      type="password"
+      placeholder="Digite a senha"
+      [(ngModel)]="cliente.senha"
+    />
+
+    <label for="confirmarSenha">Confirmar Senha</label>
+    <input
+      class="input-simples"
+      id="confirmarSenha"
+      name="confirmarSenha"
+      type="password"
+      placeholder="Confirme a senha"
+      [(ngModel)]="confirmarSenha"
+    />
+
+    <button
+      type="button"
+      class="input-submeter"
+      (click)="salvar()"
+    >
+      {{ clienteId ? 'Salvar Alterações' : 'Cadastrar' }}
+    </button>
+
+    @if (isAdmin) {
+      <button
+        type="button"
+        class="botao-voltar"
+        routerLink="/admin-clientes-listar"
+      >
+        Ir para Administração de Clientes
+      </button>
+    }
+  </form>
+</div>
