@@ -46,6 +46,13 @@
       "email": "bub@bub.com",
       "senha": "123456",
       "id": "uYP1VgQ"
+    },
+    {
+      "nome": "Administrador",
+      "email": "admin@teste.com",
+      "senha": "1234",
+      "admin": true,
+      "id": "admin-001"
     }
   ],
   "vendas": [],

@@ -3,4 +3,5 @@ export interface Cliente {
   nome: string;
   email: string;
   senha: string;
+  admin?: boolean;
 }
