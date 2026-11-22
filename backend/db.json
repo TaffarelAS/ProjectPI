@@ -1,0 +1,59 @@
+{
+  "produtos": [
+    {
+      "nome": "Guitarra",
+      "preco": 100,
+      "quantidade": 50,
+      "categoria": "Cordas",
+      "id": 1
+    },
+    {
+      "nome": "Bateria",
+      "preco": 900,
+      "quantidade": 10,
+      "categoria": "percussão",
+      "id": 3
+    },
+    {
+      "nome": "cravo",
+      "preco": 900,
+      "quantidade": 100,
+      "categoria": "corda",
+      "id": 4
+    }
+  ],
+  "clientes": [
+    {
+      "nome": "testeagain",
+      "email": "teste@teste",
+      "senha": "teste",
+      "id": "GvevnMuQpsc"
+    },
+    {
+      "nome": "1",
+      "email": "1@1",
+      "senha": "1",
+      "id": "Hiy2Nj31SX0"
+    },
+    {
+      "nome": "fim",
+      "email": "fim",
+      "senha": "fim",
+      "id": "P5R4Z43Qipc"
+    },
+    {
+      "nome": "bub",
+      "email": "bub@bub.com",
+      "senha": "123456",
+      "id": "uYP1VgQ"
+    },
+    {
+      "nome": "test4",
+      "email": "teste@teste4.com",
+      "senha": "123456",
+      "id": "bSlm7Yo"
+    }
+  ],
+  "vendas": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}

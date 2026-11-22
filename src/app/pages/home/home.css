@@ -1,6 +1,17 @@
-nav{
+.home{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.produtos {
+    background-color: lightgray;
+
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    padding: 20px;
+    gap: 20px;
+
 }
 
 img{

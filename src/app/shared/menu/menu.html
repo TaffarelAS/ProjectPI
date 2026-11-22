@@ -1,26 +1,27 @@
-<nav class="navbar">
-    <div class="navbar-container">
-        <div class="navbar-esquerda">
-            <img src="logo.png" alt="Logo" width="50" height="50"> <!-- a porra da imagem n vai nesse cu -->
-            <input type="search" name="search" placeholder="Buscar"/>
+<header>
+    <div class="header-principal">
+
+        <div class="logo-busca">
+            <a href="/"><img src="logo.png" alt="Logo" width="50" height="50"></a>
+
+            <input type="search" name="search" placeholder="Buscar" />    
         </div>
-        <div>
-            <ul class="navbar-list">
-                <li><a href="home">Início</a></li>
-                <li><a href="analog">Instrumentos analogicos</a></li>
-                <li><a href="digital">Instrumentos Digitais</a></li>
-                <li><a href="gravacao">Gravação</a></li>
-                <li><a href="persursão">Percursão</a></li>
-                <li><a href="sobre">Sobre</a></li>
-                <li><a href="montar">Monte sua Guitarra</a></li>
-                <li><a routerLink="tabelprods">tabela</a></li>
-                <li><a routerLink="/cadastro_produto">Cadastrar Produto</a></li>
+        
+        <div class="actions">
+            <ul>
+                <li><a routerLink="/cliente-cadastro">Cadastrar</a></li>
+                <li><a routerLink="/login">Login</a></li>
+                <li><a routerLink="/carrinho">Carrinho</a></li>
             </ul>
         </div>
-        <div class="navbar-acoes">
-            <a routerLink="cadastrar">Cadastrar</a>
-            <a routerLink="login">Login</a>
-            <a routerLink="carrinho">Carrinho</a>
-        </div>
     </div>
+</header>
+
+<nav>
+    <ul class="navbar-list">
+        <li><a href="analog">Instrumentos</a></li>
+        <li><a href="montar">Monte sua Guitarra</a></li>
+        <li><a href="sobre">Sobre</a></li>
+    </ul>
+
 </nav>
