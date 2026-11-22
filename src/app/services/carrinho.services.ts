@@ -1,47 +1,72 @@
+
 import { Injectable } from '@angular/core';
+
+export interface ProdutoCarrinho {
+  id: number;
+  nome: string;
+  preco: number;
+  categoria?: string;
+  imagem?: string;
+  quantidade?: number;
+  quantidadeCarrinho: number;
+}
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class CarrinhoService {
 
-  produtos: any[] = [];
+  produtos: ProdutoCarrinho[] = [];
 
-  adicionarProduto(produto: any) {
+  adicionarProduto(produto: Omit<ProdutoCarrinho, 'quantidadeCarrinho'>) {
+
     const produtoExistente = this.produtos.find(p => p.id === produto.id);
 
     if (produtoExistente) {
-      produtoExistente.quantidade++;
+      produtoExistente.quantidadeCarrinho++;
     } else {
       this.produtos.push({
         ...produto,
-        quantidade: 1
+        quantidadeCarrinho: 1
       });
     }
   }
 
   aumentarQuantidade(index: number) {
-    this.produtos[index].quantidade++;
+    this.produtos[index].quantidadeCarrinho++;
   }
 
   diminuirQuantidade(index: number) {
-    if (this.produtos[index].quantidade > 1) {
-      this.produtos[index].quantidade--;
+    if (this.produtos[index].quantidadeCarrinho > 1) {
+      this.produtos[index].quantidadeCarrinho--;
     }
   }
 
   removerProduto(index: number) {
     this.produtos.splice(index, 1);
-    alert("Item removido")
   }
 
   calcularTotal() {
+
+    let total = 0;
+    
+    for (let produto of this.produtos) {
+      total += produto.preco * produto.quantidadeCarrinho;
+    }
+
+    return total;
+  }
+
+  calcularQuantidade() {
+
     let total = 0;
 
     for (let produto of this.produtos) {
-      total += produto.preco * produto.quantidade;
+      total += produto.quantidadeCarrinho;
     }
 
     return total;
   }
 }
+

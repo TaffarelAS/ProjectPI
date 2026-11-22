@@ -11,11 +11,14 @@ import { CarrinhoService } from '../../services/carrinho.services';
 })
 export class Carrinho {
 
-  constructor(public carrinhoService: CarrinhoService) {}
+  constructor(public carrinhoService: CarrinhoService) { }
 
   finalizarCompra() {
-    alert('Compra finalizada com sucesso!');
+    if(this.carrinhoService.produtos.length === 0){
+      alert("Seu carrinho está vazio")
+      return
+    }
 
-    this.carrinhoService.produtos = [];
+    alert('Compra finalizada com sucesso!');
   }
 }
