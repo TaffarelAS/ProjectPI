@@ -45,17 +45,25 @@ a{
 .header-principal{
     display: flex;
     align-items: center; /* alinha no eixo y*/
-    justify-content: space-between; /* alinha no eixo x*/
+    justify-content: space-around;
 }
 
 .navbar-list{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 1%;
     text-decoration: none;
 }
 
 .actions{
     display: flex;
+    justify-content: space-between;
     text-decoration: none;
+}
+
+.logo-busca {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
