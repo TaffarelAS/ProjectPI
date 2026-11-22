@@ -1,0 +1,7 @@
+<svg width="48" height="84" viewBox="0 0 48 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="output-jack">
+<ellipse id="hardware-fill" cx="24" cy="42" rx="24" ry="42" fill="#AAB3B6"/>
+<ellipse id="hardware-accent-fill" cx="24" cy="41.5" rx="14" ry="15.5" fill="#E9E3D3"/>
+<ellipse id="detail-fill" cx="24" cy="41.5" rx="8" ry="9.5" fill="#30383B"/>
+</g>
+</svg>
