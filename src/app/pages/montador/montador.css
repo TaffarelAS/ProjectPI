@@ -1,19 +1,278 @@
-.montador {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-  gap: var(--space-6);
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-6);
+#montador {
+    display: flex;
+    background-color: var(--branco);
 }
 
-.montador__preview {
-  position: sticky;
-  top: var(--space-6);
-  align-self: start;
+.modelo {
+    margin: 5%;
+    height: 70vh;
+    width: 40vw;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    img {
+        height: 100%;
+        width: 100%;
+        background-color: var(--bg);
+        border: none;
+        border-radius: 6px;
+    }
+
+    .braco_modelo, .corpos, .headstock, .captadores_modelo {
+        position: absolute;
+    }
+
+    .braco_modelo {
+        bottom: 212px;
+    }
+
+    .corpos {
+        bottom: 10px;
+    }
+
+    .headstock {
+        bottom: 452px;
+    }
+
+    .hardware_modelo {
+        position: relative;
+    }
+
+    .captadores_modelo{
+        bottom: 90px;
+    }
+
+    .ponte_fixa {
+        position: absolute;
+        right: -26px;
+        top: 220px;
+    }
+
+    .knob1 {
+        position: absolute;
+        top: 230px;
+        left: 50px;
+    }
+
+    .knob2 {
+        position: absolute;
+        top: 250px;
+        left: 70px;
+    }
+
+    .jack {
+        position: absolute;
+        top: 260px;
+        left: 45px;
+    }
 }
 
-@media (max-width: 900px) {
-  .montador { grid-template-columns: 1fr; }
-  .montador__preview { position: static; }
+
+.opcoes {
+    background-color: var(--bg);
+    margin: 5%;
+    height: 50vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+
+}
+
+.sub_menu {
+    background-color: var(--bg2);
+    height: 4vh;
+    width: 20vw;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5px;
+
+    button:hover {
+        background-color: var(--btn2);
+    }
+
+    button {
+        background-color: var(--btn);
+        height: 25px;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        transition: background-color 0.2s;
+    }
+}
+
+.corpo_content,
+.braco_content,
+.hardware_content {
+    display: none;
+}
+
+.corpo_content.active,
+.braco_content.active,
+.hardware_content.active {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 100%;
+}
+
+.tipo_corpo, .tipo_braco, .estilo_hardware, .captadores{
+    display: flex;
+    flex-direction: column;
+    
+    .inputs {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.sub_inputs {
+    display: flex;
+}
+
+.madeira_corpo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    p {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    [type=radio] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    input {
+        order: 1;
+    }
+
+}
+
+.madeira_braco {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    p {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    [type=radio] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    input {
+        order: 1;
+    }
+}
+
+.escala {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    p {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    [type=radio] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    input {
+        order: 1;
+    }
+}
+
+.input_radio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+[type=radio] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    background-color: var(--branco);
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: var(--accent);
+}
+
+
+#opt_red {
+    background-color: red;
+}
+
+#opt_blu {
+    background-color: blue;
+}
+
+#opt_blk {
+    background-color: black;
+    color: var(--branco);
+}
+
+#opt_yll {
+    background-color: yellow;
+}
+
+#opt_sun {
+    background: #826544;
+}
+
+#opt_no {
+    background-color: white;
+}
+
+#opt_cro {
+    background-color: silver;
+}
+
+#opt_dou {
+    background-color: gold;
+}
+
+#opt_bra {
+    background-color: white;
+}
+
+[type=radio]+img {
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+[type=radio]:checked+img {
+    outline: 2px solid var(--accent);
 }

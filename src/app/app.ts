@@ -2,12 +2,10 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Menu } from './shared/menu/menu';
 import { Footer } from './shared/footer/footer';
-import { Home } from './pages/home/home';
-import { Montador } from './pages/montador/montador';
 
 
 @Component({
-  imports: [RouterOutlet, Menu, Footer, Home, Montador],
+  imports: [RouterOutlet, Menu, Footer,],
   standalone: true,
   selector: 'app-root',
   styleUrl: './app.css',
