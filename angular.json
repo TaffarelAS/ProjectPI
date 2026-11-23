@@ -29,6 +29,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/ProjectPI/",
               "budgets": [
                 {
                   "type": "initial",

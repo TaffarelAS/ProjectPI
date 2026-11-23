@@ -1,11 +1,11 @@
 {
   "produtos": [
     {
-      "id": 1,
       "nome": "Guitarra",
       "preco": 100,
-      "quantidade": 50,
-      "categoria": "Cordas"
+      "quantidade": 49,
+      "categoria": "Cordas",
+      "id": 1
     },
     {
       "id": 3,
@@ -32,7 +32,7 @@
     {
       "nome": "Guitarra Stratocaster Vermelha",
       "preco": 899.9,
-      "quantidade": 7,
+      "quantidade": 6,
       "categoria": "Promoções",
       "imagem": "https://images.tcdn.com.br/img/img_prod/1433778/guitarra_eletrica_6_cordas_strato_hss_vermelha_str_240hss_rd_sonoros_8219_1_b4dc9f8eb374594cc4ea7b813a78482a.jpg",
       "id": 5
@@ -195,6 +195,34 @@
       ],
       "total": 39.9,
       "id": 5
+    },
+    {
+      "clienteId": "Hiy2Nj31SX0",
+      "data": "2026-11-23T13:57:44.017Z",
+      "produtos": [
+        {
+          "produtoId": 1,
+          "nome": "Guitarra",
+          "preco": 100,
+          "quantidade": 1
+        }
+      ],
+      "total": 100,
+      "id": 6
+    },
+    {
+      "clienteId": "Hiy2Nj31SX0",
+      "data": "2026-11-23T14:00:22.508Z",
+      "produtos": [
+        {
+          "produtoId": 5,
+          "nome": "Guitarra Stratocaster Vermelha",
+          "preco": 899.9,
+          "quantidade": 1
+        }
+      ],
+      "total": 899.9,
+      "id": 7
     }
   ]
 }
