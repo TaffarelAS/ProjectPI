@@ -52,9 +52,9 @@
       "email": "admin@teste.com",
       "senha": "1234",
       "admin": true,
+      "id": "admin-001"
     },
     {
-      "id": "admin-001"
       "nome": "test4",
       "email": "teste@teste4.com",
       "senha": "123456",

@@ -1,10 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --bg: #eeeeee;
+  --bg: #eeeeeec7;
   --bg2: #6b6b75;
   --bordas: #e2e2e6;
   --branco: #fff;
   --preto: #1a1a1a;
+  --surface: #eeeeee;
+  --border: #e2e2e6;
+  --text: #1a1a1a;
+  --text-muted: #6b6b75;
   --accent: #d97706;
   --accent-hover: #b45309;
   --hardware-color: #c0c0c0;
