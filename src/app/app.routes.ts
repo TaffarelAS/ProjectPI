@@ -8,17 +8,19 @@ import { Montador } from './pages/montador/montador';
 import { ClientesCadastro } from './pages/clientes-cadastro/clientes-cadastro/clientes-cadastro';
 import { AdminClientes } from './pages/admin-clientes/admin-clientes';
 import { Pedidos } from './pages/pedidos/pedidos';
+import { Sobre } from './pages/sobre/sobre';
 
 export const routes: Routes = [
   { path: 'login', component: Login },
   { path: 'carrinho', component: Carrinho },
   { path: 'home', component: Home },
   { path: '', component: Home },
+  { path: 'sobre', component: Sobre },
   { path: 'cadastro-produtos', component: CadastroProdutos },
   { path: 'tabel-prods', component: TabelProds },
   { path: 'montar', component: Montador },
   { path: 'admin-clientes-listar', component: AdminClientes },
   { path: 'cliente-cadastro', component: ClientesCadastro },
   { path: 'admin-clientes-editar/:id', component: ClientesCadastro },
-  { path: 'pedidos', component: Pedidos}
+  { path: 'pedidos', component: Pedidos }
 ];

@@ -106,8 +106,15 @@
       "id": "P5R4Z43Qipc"
     },
     {
-      "nome": "bub",
-      "email": "bub@bub.com",
+      "nome": "Administrador",
+      "email": "admin@teste.com",
+      "senha": "1234",
+      "admin": true,
+      "id": "admin-001"
+    },
+    {
+      "nome": "test4",
+      "email": "teste@teste4.com",
       "senha": "123456",
       "id": "uYP1VgQ"
     },

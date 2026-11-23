@@ -1,6 +1,5 @@
-
 import { Component, inject } from '@angular/core';
-import { RouterLink, Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ClienteService } from '../../services/cliente.services';
 import { CarrinhoService } from '../../services/carrinho.services';
 
@@ -11,44 +10,63 @@ import { CarrinhoService } from '../../services/carrinho.services';
   templateUrl: './login.html',
 })
 export class Login {
-
-  private service = inject(ClienteService);
+  private clienteService = inject(ClienteService);
   private router = inject(Router);
   private carrinhoService = inject(CarrinhoService);
 
   mensagem = '';
 
   entrar() {
-    const email = (document.getElementById('email') as HTMLInputElement).value;
-    const senha = (document.getElementById('senha') as HTMLInputElement).value;
+    const email = (
+      document.getElementById('email') as HTMLInputElement
+    ).value.trim().toLowerCase();
 
-    if (email === 'admin@teste.com' && senha === '1234') {
-      localStorage.setItem('isAdmin', 'true');
-      localStorage.removeItem('clienteId');
-      this.carrinhoService.carregarCarrinho(null);
-      this.router.navigate(['/home']);
+    const senha = (
+      document.getElementById('senha') as HTMLInputElement
+    ).value;
+
+    if (!email || !senha) {
+      this.mensagem = 'Preencha o e-mail e a senha.';
       return;
     }
 
-    this.service.listar().subscribe({
+    this.clienteService.listar().subscribe({
       next: (clientes) => {
-        const cliente = clientes.find(
-          usuario => usuario.email === email && usuario.senha === senha
+        const usuario = clientes.find(
+          cliente =>
+            cliente.email.toLowerCase() === email &&
+            cliente.senha === senha
         );
 
-        if (!cliente) {
+        if (!usuario) {
           this.mensagem = 'E-mail ou senha incorretos.';
           return;
         }
 
-        localStorage.setItem('clienteId', cliente.id!);
-        localStorage.setItem('isAdmin', 'false');
-        
-        this.carrinhoService.carregarCarrinho(cliente.id!);
-        this.router.navigate(['/home']);
+        const isAdmin = usuario.admin === true || (email === 'admin@teste.com' && senha === '1234');
+        localStorage.setItem('isAdmin', String(isAdmin));
+
+        localStorage.setItem('usuarioLogado', JSON.stringify({
+          id: usuario.id,
+          nome: usuario.nome,
+          email: usuario.email,
+          admin: isAdmin
+        }));
+
+        this.mensagem = `Bem-vindo, ${usuario.nome}!`;
+
+        if (isAdmin) {
+          localStorage.removeItem('clienteId');
+          this.carrinhoService.carregarCarrinho(null);
+          this.router.navigate(['/admin-clientes-listar']);
+        } else {
+          localStorage.setItem('clienteId', usuario.id!);
+          this.carrinhoService.carregarCarrinho(usuario.id!);
+          this.router.navigate(['/home']);
+        }
       },
       error: () => {
-        this.mensagem = 'Erro ao conectar com o servidor.';
+        this.mensagem = 'Erro ao conectar com o banco de dados.';
       }
     });
   }

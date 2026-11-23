@@ -1,0 +1,19 @@
+<svg width="78" height="39" viewBox="0 0 78 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="pickup-humbucker">
+<rect id="pickup-base-fill" y="4" width="78" height="31" rx="4" fill="#AAB3B6"/>
+<rect id="pickup-cover-fill" x="5" width="68" height="19" rx="5" fill="#E9E3D3"/>
+<rect id="pickup-base-fill_2" x="5" y="20" width="68" height="19" rx="5" fill="#30383B"/>
+<circle id="pole-fill" cx="15" cy="9.00002" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_2" cx="15.1" cy="29.1" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_3" cx="24.5" cy="9.00002" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_4" cx="24.6" cy="29.1" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_5" cx="34" cy="9.00002" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_6" cx="34.1" cy="29.1" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_7" cx="43.5" cy="9.00002" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_8" cx="43.6" cy="29.1" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_9" cx="53" cy="9.00002" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_10" cx="53.1" cy="29.1" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_11" cx="62.5" cy="9.00002" r="2.1" fill="#AAB3B6"/>
+<circle id="pole-fill_12" cx="62.6" cy="29.1" r="2.1" fill="#AAB3B6"/>
+</g>
+</svg>
