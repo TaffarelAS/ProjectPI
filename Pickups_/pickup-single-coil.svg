@@ -1,0 +1,12 @@
+<svg width="78" height="20" viewBox="0 0 78 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="pickup-single-coil">
+<rect id="pickup-base-fill" y="1" width="78" height="18" rx="9" fill="#30383B"/>
+<rect id="pickup-cover-fill" x="4" width="70" height="19" rx="8" fill="#E9E3D3"/>
+<circle id="pole-fill" cx="15.15" cy="9.15" r="2.15" fill="#AAB3B6"/>
+<circle id="pole-fill_2" cx="24.25" cy="9.15" r="2.15" fill="#AAB3B6"/>
+<circle id="pole-fill_3" cx="33.35" cy="9.15" r="2.15" fill="#AAB3B6"/>
+<circle id="pole-fill_4" cx="42.45" cy="9.15" r="2.15" fill="#AAB3B6"/>
+<circle id="pole-fill_5" cx="51.55" cy="9.15" r="2.15" fill="#AAB3B6"/>
+<circle id="pole-fill_6" cx="60.65" cy="9.15" r="2.15" fill="#AAB3B6"/>
+</g>
+</svg>
