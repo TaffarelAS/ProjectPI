@@ -7,12 +7,14 @@ import { TabelProds } from './pages/tabel-prods/tabel-prods';
 import { Montador } from './pages/montador/montador';
 import { ClientesCadastro } from './pages/clientes-cadastro/clientes-cadastro/clientes-cadastro';
 import { AdminClientes } from './pages/admin-clientes/admin-clientes';
+import { Sobre } from './pages/sobre/sobre';
 
 export const routes: Routes = [
   { path: 'login', component: Login },
   { path: 'carrinho', component: Carrinho },
   { path: 'home', component: Home },
   { path: '', component: Home },
+  { path: 'sobre', component: Sobre },
   { path: 'cadastro-produtos', component: CadastroProdutos },
   { path: 'tabel-prods', component: TabelProds },
   { path: 'montar', component: Montador },
