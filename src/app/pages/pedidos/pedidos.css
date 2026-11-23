@@ -1,0 +1,172 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 16px;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  color: #222222;
+}
+
+.pedidos-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 35px 42px;
+  background: #eeeeee;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.13);
+}
+
+.cabecalho,
+.rodape {
+  text-align: center;
+  font-family: Georgia, serif;
+}
+
+.cabecalho {
+  margin-bottom: 30px;
+}
+
+.cabecalho h1 {
+  margin: 0 0 8px;
+  color: #1760b8;
+  font-size: 30px;
+}
+
+.cabecalho p,
+.rodape p {
+  margin: 0;
+  color: #444444;
+  font-size: 14px;
+}
+
+.pedido {
+  padding: 20px 0;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.pedido-cabecalho,
+.produto,
+.pedido-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.pedido-cabecalho h2 {
+  margin: 0 0 6px;
+  color: #1760b8;
+  font-size: 17px;
+}
+
+.pedido-cabecalho p,
+.produto-info p {
+  margin: 0;
+  color: #555555;
+  font-size: 12px;
+}
+
+.status {
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: #d9f0df;
+  color: #239e48;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.produtos {
+  margin-top: 18px;
+}
+
+.produto {
+  padding: 12px 0;
+  border-top: 1px solid #dddddd;
+}
+
+.produto-info {
+  min-width: 0;
+}
+
+.produto-info h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.produto-quantidade {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.produto-quantidade span {
+  color: #555555;
+}
+
+.pedido-total {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #d0d0d0;
+  font-size: 15px;
+}
+
+.pedido-total strong {
+  color: #1760b8;
+  font-size: 18px;
+}
+
+.vazio {
+  padding: 30px 0;
+  color: #555555;
+  text-align: center;
+}
+
+.vazio span {
+  font-size: 35px;
+}
+
+.rodape {
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.rodape p {
+  margin-bottom: 8px;
+}
+
+.rodape a {
+  color: #1760b8;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .pedidos-card {
+    padding: 30px 22px;
+  }
+
+  .pedido-cabecalho h2 {
+    font-size: 15px;
+  }
+
+  .produto-info h3 {
+    font-size: 12px;
+  }
+
+  .pedido-total {
+    font-size: 13px;
+  }
+}

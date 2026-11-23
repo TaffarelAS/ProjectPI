@@ -1,25 +1,89 @@
 {
   "produtos": [
     {
+      "id": 1,
       "nome": "Guitarra",
       "preco": 100,
       "quantidade": 50,
-      "categoria": "Cordas",
-      "id": 1
+      "categoria": "Cordas"
     },
     {
+      "id": 3,
       "nome": "Bateria",
       "preco": 900,
       "quantidade": 10,
-      "categoria": "percussão",
-      "id": 3
+      "categoria": "percussão"
     },
     {
+      "id": 4,
       "nome": "cravo",
       "preco": 900,
       "quantidade": 100,
-      "categoria": "corda",
-      "id": 4
+      "categoria": "corda"
+    },
+    {
+      "nome": "Violão Fender CN60S",
+      "preco": 1299.9,
+      "quantidade": 12,
+      "categoria": "Promoções",
+      "imagem": "https://serenata.vteximg.com.br/arquivos/ids/3127462-550-550/VIOLAO-FENDER-CN60S-NATURAL_IMG2.jpg?v=639178221155530000",
+      "id": 2
+    },
+    {
+      "nome": "Guitarra Stratocaster Vermelha",
+      "preco": 899.9,
+      "quantidade": 7,
+      "categoria": "Promoções",
+      "imagem": "https://images.tcdn.com.br/img/img_prod/1433778/guitarra_eletrica_6_cordas_strato_hss_vermelha_str_240hss_rd_sonoros_8219_1_b4dc9f8eb374594cc4ea7b813a78482a.jpg",
+      "id": 5
+    },
+    {
+      "nome": "Instrumento Musical",
+      "preco": 349.9,
+      "quantidade": 17,
+      "categoria": "Promoções",
+      "imagem": "https://cdn.awsli.com.br/2500x2500/1874/1874008/produto/307575645/gfruse-g6yadu7nny.jpg",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "nome": "Acessório Musical",
+      "preco": 199.9,
+      "imagem": "https://cdn.awsli.com.br/800x800/395/395433/produto/16957308/9c2689c69d.jpg",
+      "quantidade": 30,
+      "categoria": "Mais Vendidos"
+    },
+    {
+      "nome": "Capotraste para Violão",
+      "preco": 39.9,
+      "quantidade": 39,
+      "categoria": "Mais Vendidos",
+      "imagem": "https://cdn.awsli.com.br/554/554104/produto/317514929/8036-capotraste-para-viol-o-smart-prata-jx-32-t3h25l2tg4.jpg",
+      "id": 8
+    },
+    {
+      "id": 9,
+      "nome": "Instrumento Musical Novo",
+      "preco": 259.9,
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTreRDwO-VJxVy9z6F04RBgZALVa-m5NFOJFeqo-ygABGIzVKEYzyR036g8&s=10",
+      "quantidade": 18,
+      "categoria": "Acabaram de Chegar"
+    },
+    {
+      "id": 10,
+      "nome": "Clarinete Yamaha YCL255",
+      "preco": 3499.9,
+      "imagem": "https://images.tcdn.com.br/img/img_prod/757946/clarinete_yamaha_ycl255_si_bemol_bb_7443_1_09ed08a16d9af01beb58524ad1f3db0e.png",
+      "quantidade": 8,
+      "categoria": "Acabaram de Chegar"
+    },
+    {
+      "id": 11,
+      "nome": "Pandeiro Gope 10 Pol Madeira Pele Nylon",
+      "preco": 170.9,
+      "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_696860-MLA115964317770_092026-F.webp",
+      "quantidade": 25,
+      "categoria": "Acabaram de Chegar"
     }
   ],
   "clientes": [
@@ -52,9 +116,85 @@
       "nome": "test4",
       "email": "teste@teste4.com",
       "senha": "123456",
-      "id": "bSlm7Yo"
+      "id": "uYP1VgQ"
+    },
+    {
+      "nome": "Bananilson Farofa",
+      "email": "bananilsonF@gmail.com",
+      "senha": "banana12341",
+      "id": "882nB3O"
     }
   ],
-  "vendas": [],
-  "$schema": "./node_modules/json-server/schema.json"
+  "vendas": [
+    {
+      "clienteId": "882nB3O",
+      "data": "2026-11-23T03:19:21.888Z",
+      "produtos": [
+        {
+          "produtoId": 5,
+          "nome": "Guitarra Stratocaster Vermelha",
+          "preco": 899.9,
+          "quantidade": 13
+        }
+      ],
+      "total": 11698.699999999999,
+      "id": 1
+    },
+    {
+      "clienteId": "882nB3O",
+      "data": "2026-11-23T03:21:14.057Z",
+      "produtos": [
+        {
+          "produtoId": 6,
+          "nome": "Instrumento Musical",
+          "preco": 349.9,
+          "quantidade": 1
+        }
+      ],
+      "total": 349.9,
+      "id": 2
+    },
+    {
+      "clienteId": "882nB3O",
+      "data": "2026-11-23T04:14:02.995Z",
+      "produtos": [
+        {
+          "produtoId": 2,
+          "nome": "Violão Fender CN60S",
+          "preco": 1299.9,
+          "quantidade": 1
+        }
+      ],
+      "total": 1299.9,
+      "id": 3
+    },
+    {
+      "clienteId": "uYP1VgQ",
+      "data": "2026-11-23T04:14:59.840Z",
+      "produtos": [
+        {
+          "produtoId": 2,
+          "nome": "Violão Fender CN60S",
+          "preco": 1299.9,
+          "quantidade": 2
+        }
+      ],
+      "total": 2599.8,
+      "id": 4
+    },
+    {
+      "clienteId": "uYP1VgQ",
+      "data": "2026-11-23T04:31:16.761Z",
+      "produtos": [
+        {
+          "produtoId": 8,
+          "nome": "Capotraste para Violão",
+          "preco": 39.9,
+          "quantidade": 1
+        }
+      ],
+      "total": 39.9,
+      "id": 5
+    }
+  ]
 }

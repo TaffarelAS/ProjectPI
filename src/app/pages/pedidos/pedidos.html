@@ -1,0 +1,79 @@
+
+<div class="pagina">
+  <div class="pedidos-card">
+
+    <header class="cabecalho">
+      <h1>Meus Pedidos</h1>
+      <p>Confira o histórico das suas compras</p>
+    </header>
+
+    <div class="conteudo">
+        
+      @if (carregando) {
+        <div class="vazio">
+          <p>Carregando seus pedidos...</p>
+        </div>
+      } @else if (mensagem) {
+        <div class="vazio">
+          <p>{{ mensagem }}</p>
+        </div>
+      } @else if (vendas.length === 0) {
+        <div class="vazio">
+          <span>🛒</span>
+          <p>Você ainda não realizou nenhuma compra.</p>
+        </div>
+      } @else {
+
+        @for (venda of vendas; track venda.id) {
+          <div class="pedido">
+
+            <div class="pedido-cabecalho">
+              <div>
+                <h2>Pedido #{{ venda.id }}</h2>
+                <p>Realizado em {{ venda.data | date:'dd/MM/yyyy HH:mm' }}</p>
+              </div>
+
+              <span class="status">Concluído</span>
+            </div>
+
+            <div class="produtos">
+
+              @for (produto of venda.produtos; track produto.produtoId) {
+                <div class="produto">
+
+                  <div class="produto-info">
+                    <h3>{{ produto.nome }}</h3>
+                    <p>{{ produto.preco | currency:'BRL' }} cada</p>
+                  </div>
+
+                  <div class="produto-quantidade">
+                    <span>Qtd.: {{ produto.quantidade }}</span>
+                    <strong>
+                      {{ produto.preco * produto.quantidade | currency:'BRL' }}
+                    </strong>
+                  </div>
+
+                </div>
+              }
+
+            </div>
+
+            <div class="pedido-total">
+              <span>Total da compra</span>
+              <strong>{{ venda.total | currency:'BRL' }}</strong>
+            </div>
+
+          </div>
+        }
+
+      }
+
+    </div>
+
+    <footer class="rodape">
+      <p>Deseja comprar novamente?</p>
+      <a routerLink="/home">Voltar às compras</a>
+    </footer>
+
+  </div>
+</div>

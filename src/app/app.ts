@@ -3,9 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { Menu } from './shared/menu/menu';
 import { Footer } from './shared/footer/footer';
 
-
 @Component({
-  imports: [RouterOutlet, Menu, Footer,],
+  imports: [RouterOutlet, Menu, Footer],
   standalone: true,
   selector: 'app-root',
   styleUrl: './app.css',
