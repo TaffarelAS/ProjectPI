@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+
+import { Component, inject } from '@angular/core';
+import { RouterLink, Router } from '@angular/router';
+import { ClienteService } from '../../services/cliente.services';
+import { CarrinhoService } from '../../services/carrinho.services';
 
 @Component({
   imports: [RouterLink],
@@ -9,52 +12,44 @@ import { RouterLink } from '@angular/router';
 })
 export class Login {
 
-  mensagem = '';
+  private service = inject(ClienteService);
+  private router = inject(Router);
+  private carrinhoService = inject(CarrinhoService);
 
-  usuarios = [
-    {
-      email: 'admin@teste.com',
-      senha: '1234',
-      admin: true
-    },
-    {
-      email: 'usuario1@teste.com',
-      senha: '1234',
-      admin: false
-    },
-    {
-      email: 'usuario2@teste.com',
-      senha: '1234',
-      admin: false
-    }
-  ];
+  mensagem = '';
 
   entrar() {
     const email = (document.getElementById('email') as HTMLInputElement).value;
     const senha = (document.getElementById('senha') as HTMLInputElement).value;
 
-    const usuariosCadastrados = JSON.parse(
-      localStorage.getItem('usuarios') || '[]'
-    );
-
-    const todosUsuarios = [
-      ...this.usuarios,
-      ...usuariosCadastrados
-    ];
-
-    const usuario = todosUsuarios.find(
-      usuario => usuario.email === email && usuario.senha === senha
-    );
-
-    if (!usuario) {
-      this.mensagem = 'E-mail ou senha incorretos.';
+    if (email === 'admin@teste.com' && senha === '1234') {
+      localStorage.setItem('isAdmin', 'true');
+      localStorage.removeItem('clienteId');
+      this.carrinhoService.carregarCarrinho(null);
+      this.router.navigate(['/home']);
       return;
     }
 
-    if (usuario.admin) {
-      this.mensagem = 'Usuário administrador.';
-    } else {
-      this.mensagem = 'Usuário comum.';
-    }
+    this.service.listar().subscribe({
+      next: (clientes) => {
+        const cliente = clientes.find(
+          usuario => usuario.email === email && usuario.senha === senha
+        );
+
+        if (!cliente) {
+          this.mensagem = 'E-mail ou senha incorretos.';
+          return;
+        }
+
+        localStorage.setItem('clienteId', cliente.id!);
+        localStorage.setItem('isAdmin', 'false');
+        
+        this.carrinhoService.carregarCarrinho(cliente.id!);
+        this.router.navigate(['/home']);
+      },
+      error: () => {
+        this.mensagem = 'Erro ao conectar com o servidor.';
+      }
+    });
   }
 }

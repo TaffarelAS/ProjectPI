@@ -15,13 +15,9 @@
 
             <div class="produto-imagem">
               @if (produto.imagem) {
-                <img 
-                  [src]="produto.imagem" 
-                  [alt]="produto.nome">
+                <img [src]="produto.imagem" [alt]="produto.nome">
               } @else {
-                <div class="sem-imagem">
-                  Imagem indisponível
-                </div>
+                <img src="/icone-padrao.png" alt="Sem imagem">
               }
             </div>
 

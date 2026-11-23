@@ -1,41 +1,64 @@
+
 <nav class="home">
 
-  <div class="">
+  <div>
     <a routerLink="/carrinho" class="link-carrinho">
       Ver Carrinho
-      ({{ carrinhoService.produtos.length }})
+      ({{ carrinhoService.calcularQuantidade() }})
     </a>
   </div>
 
-  <section class="grid-container " *ngFor="let categoria of categorias">
+  @if (categorias.length > 0) {
+    @for (categoria of categorias; track categoria.nome) {
 
-    <h2>{{ categoria.nome }}</h2>
+      <section class="grid-container">
 
-    <hr>
+        <h2>{{ categoria.nome }}</h2>
+        <hr>
 
-    <div class="produtos">
+        <div class="produtos">
 
-      <div class="" *ngFor="let produto of categoria.produtos">
+          @for (produto of categoria.produtos; track produto.id) {
 
-        <img
-          [src]="produto.imagem"
-          [alt]="produto.nome"
-        >
+            <div class="produto">
 
-        <h3>{{ produto.nome }}</h3>
+              <h3>{{ produto.nome }}</h3>
 
-        <p class="preco">
-          {{ produto.preco | currency:'BRL' }}
-        </p>
+             @if (produto.imagem) {
+                <img [src]="produto.imagem" [alt]="produto.nome">
+              } @else {
+                <img src="/icone-padrao.png" alt="Sem imagem">
+              }
 
-        <button (click)="adicionarAoCarrinho(produto)">
-          Adicionar ao carrinho
-        </button>
+              <p class="preco">
+                {{ produto.preco | currency:'BRL' }}
+              </p>
 
-      </div>
+              <p>
+                Estoque disponível:
+                {{ produto.quantidade - carrinhoService.quantidadeNoCarrinho(produto.id!) }}
+              </p>
 
-    </div>
+              <button
+                (click)="adicionarAoCarrinho(produto)"
+                [disabled]="
+                  produto.quantidade <= 0 ||
+                  carrinhoService.quantidadeNoCarrinho(produto.id!) >= produto.quantidade
+                ">
+                Adicionar ao carrinho
+              </button>
 
-  </section>
+            </div>
+
+          }
+
+        </div>
+
+      </section>
+
+    }
+  } @else {
+    <p>Nenhum produto encontrado.</p>
+  }
 
 </nav>

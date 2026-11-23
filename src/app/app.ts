@@ -7,7 +7,7 @@ import { Montador } from './pages/montador/montador';
 
 
 @Component({
-  imports: [RouterOutlet, Menu, Footer, Home, Montador],
+  imports: [RouterOutlet, Menu, Footer],
   standalone: true,
   selector: 'app-root',
   styleUrl: './app.css',

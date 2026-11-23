@@ -65,7 +65,8 @@ export class Produto {
   preco: number;
   quantidade: number;
   categoria: string;
-
+  imagem?: string;
+  
   constructor(
     nome: string,
     preco: number,
