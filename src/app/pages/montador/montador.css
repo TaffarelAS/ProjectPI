@@ -8,6 +8,9 @@
     height: 70vh;
     width: 40vw;
     background-color: var(--bg);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.13);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +76,9 @@
 
 .opcoes {
     background-color: var(--bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.13);
     margin: 5%;
+    padding: 20px;
     height: 50vh;
     width: 40vw;
     display: flex;
@@ -81,7 +86,7 @@
     align-items: center;
     justify-content: center;
     border: none;
-    border-radius: 6px;
+    border-radius: 20px;
 
 }
 

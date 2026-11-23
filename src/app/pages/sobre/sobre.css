@@ -1,0 +1,18 @@
+.corpo-sobre {
+    background-color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0px;
+    padding: 100px;
+}
+
+.container-sobre {
+    height: 80%;
+    padding: 64px;
+    font-size: 20px;
+    background-color: var(--bg);
+    border: 5px solid var(--bg2);
+    border-radius: 20px;
+}

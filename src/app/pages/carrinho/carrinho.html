@@ -1,130 +1,100 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tela de Carrinho</title>
-  <link rel="stylesheet" href="carrinho.css">
-</head>
 <body>
   <div class="pagina">
-  <div class="carrinho-card">
+    <div class="carrinho-card">
 
-    <header class="cabecalho">
-      <h1>Meu Carrinho</h1>
-      <p>Confira seus produtos</p>
-    </header>
+      <header class="cabecalho">
+        <h1>Meu Carrinho</h1>
+        <p>Confira seus produtos</p>
+      </header>
 
-    <div class="conteudo">
+      <div class="conteudo">
 
-      <div
-        class="produto"
-        *ngFor="let produto of carrinhoService.produtos; let i = index"
-      >
+        <div class="produto" *ngFor="let produto of carrinhoService.produtos; let i = index">
 
-        <div class="produto-info">
+          <div class="produto-info">
 
-          <div class="produto-imagem">
-            <img [src]="produto.imagem" [alt]="produto.nome">
+            <div class="produto-imagem">
+              @if (produto.imagem) {
+                <img [src]="produto.imagem" [alt]="produto.nome">
+              } @else {
+                <img src="/icone-padrao.png" alt="Sem imagem">
+              }
+            </div>
+
+            <div class="produto-detalhes">
+              <h3>{{ produto.nome }}</h3>
+
+              <p class="preco">
+                {{ produto.preco | currency:'BRL' }}
+              </p>
+            </div>
+
           </div>
 
-          <div class="produto-detalhes">
-            <h3>{{ produto.nome }}</h3>
+          <div class="produto-acoes">
 
-            <p class="preco">
-              {{ produto.preco | currency:'BRL' }}
-            </p>
+            <div class="quantidade">
+
+              <button type="button" (click)="carrinhoService.diminuirQuantidade(i)" aria-label="Diminuir quantidade">
+                −
+              </button>
+
+              <span>{{ produto.quantidadeCarrinho }}</span>
+
+              <button type="button" (click)="carrinhoService.aumentarQuantidade(i)" aria-label="Aumentar quantidade">
+                +
+              </button>
+
+            </div>
+
+            <button type="button" class="remover" (click)="carrinhoService.removerProduto(i)">
+              Remover
+            </button>
+
           </div>
 
         </div>
 
-        <div class="produto-acoes">
-
-          <div class="quantidade">
-
-            <button
-              type="button"
-              (click)="carrinhoService.diminuirQuantidade(i)"
-              aria-label="Diminuir quantidade"
-            >
-              −
-            </button>
-
-            <span>{{ produto.quantidade }}</span>
-
-            <button
-              type="button"
-              (click)="carrinhoService.aumentarQuantidade(i)"
-              aria-label="Aumentar quantidade"
-            >
-              +
-            </button>
-
-          </div>
-
-          <button
-            type="button"
-            class="remover"
-            (click)="carrinhoService.removerProduto(i)"
-          >
-            Remover
-          </button>
-
+        <div class="vazio" *ngIf="carrinhoService.produtos.length === 0">
+          <span>🛒</span>
+          <p>Seu carrinho está vazio.</p>
         </div>
 
       </div>
 
-      <div
-        class="vazio"
-        *ngIf="carrinhoService.produtos.length === 0"
-      >
-        <span>🛒</span>
-        <p>Seu carrinho está vazio.</p>
+      <div class="resumo" *ngIf="carrinhoService.produtos.length > 0">
+
+        <div class="linha-resumo">
+          <span>Subtotal</span>
+          <span>
+            {{ carrinhoService.calcularTotal() | currency:'BRL' }}
+          </span>
+        </div>
+
+        <div class="linha-resumo">
+          <span>Frete</span>
+          <span class="frete">Grátis</span>
+        </div>
+
+        <div class="divisor"></div>
+
+        <div class="linha-total">
+          <strong>Total</strong>
+          <strong>
+            {{ carrinhoService.calcularTotal() | currency:'BRL' }}
+          </strong>
+        </div>
+
+        <button class="btn-finalizar" (click)="finalizarCompra()">
+          Finalizar compra
+        </button>
+
       </div>
+
+      <footer class="rodape">
+        <p>Deseja continuar comprando?</p>
+        <a routerLink="/home">Voltar às compras</a>
+      </footer>
 
     </div>
-
-    <div
-      class="resumo"
-      *ngIf="carrinhoService.produtos.length > 0"
-    >
-
-      <div class="linha-resumo">
-        <span>Subtotal</span>
-        <span>
-          {{ carrinhoService.calcularTotal() | currency:'BRL' }}
-        </span>
-      </div>
-
-      <div class="linha-resumo">
-        <span>Frete</span>
-        <span class="frete">Grátis</span>
-      </div>
-
-      <div class="divisor"></div>
-
-      <div class="linha-total">
-        <strong>Total</strong>
-        <strong>
-          {{ carrinhoService.calcularTotal() | currency:'BRL' }}
-        </strong>
-      </div>
-
-      <button
-        class="btn-finalizar"
-        (click)="finalizarCompra()"
-      >
-        Finalizar compra
-      </button>
-
-    </div>
-
-    <footer class="rodape">
-      <p>Deseja continuar comprando?</p>
-      <a routerLink="/home">Voltar às compras</a>
-    </footer>
-
   </div>
-</div>
-</body>
-</html>

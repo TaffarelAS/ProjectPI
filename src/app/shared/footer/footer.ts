@@ -7,4 +7,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.css',
   templateUrl: './footer.html',
 })
-export class Footer {}
+export class Footer {
+  get isAdmin(): boolean { 
+    return localStorage.getItem('isAdmin') === 'true';
+  }
+}
